@@ -1,0 +1,1552 @@
+Component: Arm Compiler for Embedded 6.19 Tool: armlink [5e73cb00]
+
+==============================================================================
+
+Section Cross References
+
+    board.o(.text.initClk) refers to fpu.o(i.FPUEnable) for FPUEnable
+    board.o(.text.initClk) refers to fpu.o(i.FPULazyStackingEnable) for FPULazyStackingEnable
+    board.o(.text.initClk) refers to sysctl.o(i.SysCtlClockSet) for SysCtlClockSet
+    board.o(.ARM.exidx.text.initClk) refers to board.o(.text.initClk) for [Anonymous Symbol]
+    board.o(.ARM.exidx.text.stopWDT) refers to board.o(.text.stopWDT) for [Anonymous Symbol]
+    board.o(.text.registerInterruptHandler) refers to board.o(.bss.pIrqEventHandler) for pIrqEventHandler
+    board.o(.ARM.exidx.text.registerInterruptHandler) refers to board.o(.text.registerInterruptHandler) for [Anonymous Symbol]
+    board.o(.text.CC3100_disable) refers to gpio.o(i.GPIOPinWrite) for GPIOPinWrite
+    board.o(.ARM.exidx.text.CC3100_disable) refers to board.o(.text.CC3100_disable) for [Anonymous Symbol]
+    board.o(.text.CC3100_enable) refers to gpio.o(i.GPIOPinWrite) for GPIOPinWrite
+    board.o(.ARM.exidx.text.CC3100_enable) refers to board.o(.text.CC3100_enable) for [Anonymous Symbol]
+    board.o(.text.CC3100_InterruptEnable) refers to gpio.o(i.GPIOIntEnable) for GPIOIntEnable
+    board.o(.ARM.exidx.text.CC3100_InterruptEnable) refers to board.o(.text.CC3100_InterruptEnable) for [Anonymous Symbol]
+    board.o(.text.CC3100_InterruptDisable) refers to gpio.o(i.GPIOIntDisable) for GPIOIntDisable
+    board.o(.ARM.exidx.text.CC3100_InterruptDisable) refers to board.o(.text.CC3100_InterruptDisable) for [Anonymous Symbol]
+    board.o(.text.MaskIntHdlr) refers to board.o(.bss.IntIsMasked) for IntIsMasked
+    board.o(.ARM.exidx.text.MaskIntHdlr) refers to board.o(.text.MaskIntHdlr) for [Anonymous Symbol]
+    board.o(.text.UnMaskIntHdlr) refers to board.o(.bss.IntIsMasked) for IntIsMasked
+    board.o(.ARM.exidx.text.UnMaskIntHdlr) refers to board.o(.text.UnMaskIntHdlr) for [Anonymous Symbol]
+    board.o(.text.Delay) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    board.o(.text.Delay) refers to sysctl.o(.emb_text) for SysCtlDelay
+    board.o(.ARM.exidx.text.Delay) refers to board.o(.text.Delay) for [Anonymous Symbol]
+    board.o(.text.GPIOB_intHandler) refers to gpio.o(i.GPIOIntStatus) for GPIOIntStatus
+    board.o(.text.GPIOB_intHandler) refers to gpio.o(i.GPIOIntClear) for GPIOIntClear
+    board.o(.text.GPIOB_intHandler) refers to board.o(.bss.pIrqEventHandler) for pIrqEventHandler
+    board.o(.ARM.exidx.text.GPIOB_intHandler) refers to board.o(.text.GPIOB_intHandler) for [Anonymous Symbol]
+    board.o(.text.UART1_intHandler) refers to uart.o(i.UARTIntStatus) for UARTIntStatus
+    board.o(.text.UART1_intHandler) refers to uart.o(i.UARTIntClear) for UARTIntClear
+    board.o(.ARM.exidx.text.UART1_intHandler) refers to board.o(.text.UART1_intHandler) for [Anonymous Symbol]
+    led.o(.ARM.exidx.text.LED_Init) refers to led.o(.text.LED_Init) for [Anonymous Symbol]
+    led.o(.ARM.exidx.text.Board_Input) refers to led.o(.text.Board_Input) for [Anonymous Symbol]
+    led.o(.ARM.exidx.text.LED_RedOn) refers to led.o(.text.LED_RedOn) for [Anonymous Symbol]
+    led.o(.ARM.exidx.text.LED_RedOff) refers to led.o(.text.LED_RedOff) for [Anonymous Symbol]
+    led.o(.ARM.exidx.text.LED_RedToggle) refers to led.o(.text.LED_RedToggle) for [Anonymous Symbol]
+    led.o(.ARM.exidx.text.LED_BlueToggle) refers to led.o(.text.LED_BlueToggle) for [Anonymous Symbol]
+    led.o(.ARM.exidx.text.LED_GreenToggle) refers to led.o(.text.LED_GreenToggle) for [Anonymous Symbol]
+    led.o(.ARM.exidx.text.LED_GreenOn) refers to led.o(.text.LED_GreenOn) for [Anonymous Symbol]
+    led.o(.ARM.exidx.text.LED_GreenOff) refers to led.o(.text.LED_GreenOff) for [Anonymous Symbol]
+    device.o(.text.sl_Task) refers to nonos.o(.text._SlNonOsMainLoopTask) for _SlNonOsMainLoopTask
+    device.o(.ARM.exidx.text.sl_Task) refers to device.o(.text.sl_Task) for [Anonymous Symbol]
+    device.o(.ARM.exidx.text.GetStartResponseConvert) refers to device.o(.text.GetStartResponseConvert) for [Anonymous Symbol]
+    device.o(.text.sl_Start) refers to driver.o(.text._SlDrvDriverCBInit) for _SlDrvDriverCBInit
+    device.o(.text.sl_Start) refers to spi.o(.text.spi_Open) for spi_Open
+    device.o(.text.sl_Start) refers to driver.o(.bss.g_pCB) for g_pCB
+    device.o(.text.sl_Start) refers to driver.o(.text._SlDrvWaitForPoolObj) for _SlDrvWaitForPoolObj
+    device.o(.text.sl_Start) refers to nonos.o(.text._SlNonOsSemGet) for _SlNonOsSemGet
+    device.o(.text.sl_Start) refers to nonos.o(.text._SlNonOsSemSet) for _SlNonOsSemSet
+    device.o(.text.sl_Start) refers to board.o(.text.CC3100_disable) for CC3100_disable
+    device.o(.text.sl_Start) refers to driver.o(.text._SlDrvRxIrqHandler) for _SlDrvRxIrqHandler
+    device.o(.text.sl_Start) refers to board.o(.text.registerInterruptHandler) for registerInterruptHandler
+    device.o(.text.sl_Start) refers to board.o(.text.CC3100_enable) for CC3100_enable
+    device.o(.text.sl_Start) refers to driver.o(.text._SlDrvReleasePoolObj) for _SlDrvReleasePoolObj
+    device.o(.text.sl_Start) refers to device.o(.text.GetStartResponseConvert) for GetStartResponseConvert
+    device.o(.ARM.exidx.text.sl_Start) refers to device.o(.text.sl_Start) for [Anonymous Symbol]
+    device.o(.text._sl_HandleAsync_InitComplete) refers to driver.o(.bss.g_pCB) for g_pCB
+    device.o(.text._sl_HandleAsync_InitComplete) refers to nonos.o(.text._SlNonOsSemGet) for _SlNonOsSemGet
+    device.o(.text._sl_HandleAsync_InitComplete) refers to device.o(.text.GetStartResponseConvert) for GetStartResponseConvert
+    device.o(.text._sl_HandleAsync_InitComplete) refers to nonos.o(.text._SlNonOsSemSet) for _SlNonOsSemSet
+    device.o(.text._sl_HandleAsync_InitComplete) refers to driver.o(.text._SlDrvReleasePoolObj) for _SlDrvReleasePoolObj
+    device.o(.ARM.exidx.text._sl_HandleAsync_InitComplete) refers to device.o(.text._sl_HandleAsync_InitComplete) for [Anonymous Symbol]
+    device.o(.text._sl_HandleAsync_Stop) refers to driver.o(.bss.g_pCB) for g_pCB
+    device.o(.text._sl_HandleAsync_Stop) refers to nonos.o(.text._SlNonOsSemGet) for _SlNonOsSemGet
+    device.o(.text._sl_HandleAsync_Stop) refers to nonos.o(.text._SlNonOsSemSet) for _SlNonOsSemSet
+    device.o(.ARM.exidx.text._sl_HandleAsync_Stop) refers to device.o(.text._sl_HandleAsync_Stop) for [Anonymous Symbol]
+    device.o(.text.sl_Stop) refers to driver.o(.text._SlDrvWaitForPoolObj) for _SlDrvWaitForPoolObj
+    device.o(.text.sl_Stop) refers to board.o(.text.registerInterruptHandler) for registerInterruptHandler
+    device.o(.text.sl_Stop) refers to board.o(.text.CC3100_disable) for CC3100_disable
+    device.o(.text.sl_Stop) refers to driver.o(.bss.g_pCB) for g_pCB
+    device.o(.text.sl_Stop) refers to spi.o(.text.spi_Close) for spi_Close
+    device.o(.text.sl_Stop) refers to driver.o(.text._SlDrvDriverCBDeinit) for _SlDrvDriverCBDeinit
+    device.o(.text.sl_Stop) refers to nonos.o(.text._SlNonOsSemGet) for _SlNonOsSemGet
+    device.o(.text.sl_Stop) refers to nonos.o(.text._SlNonOsSemSet) for _SlNonOsSemSet
+    device.o(.text.sl_Stop) refers to device.o(.rodata._SlStopCmdCtrl) for _SlStopCmdCtrl
+    device.o(.text.sl_Stop) refers to driver.o(.text._SlDrvCmdOp) for _SlDrvCmdOp
+    device.o(.text.sl_Stop) refers to driver.o(.text._SlDrvReleasePoolObj) for _SlDrvReleasePoolObj
+    device.o(.ARM.exidx.text.sl_Stop) refers to device.o(.text.sl_Stop) for [Anonymous Symbol]
+    device.o(.text.sl_EventMaskSet) refers to device.o(.rodata._SlEventMaskSetCmdCtrl) for _SlEventMaskSetCmdCtrl
+    device.o(.text.sl_EventMaskSet) refers to driver.o(.text._SlDrvCmdOp) for _SlDrvCmdOp
+    device.o(.ARM.exidx.text.sl_EventMaskSet) refers to device.o(.text.sl_EventMaskSet) for [Anonymous Symbol]
+    device.o(.text.sl_EventMaskGet) refers to device.o(.rodata._SlEventMaskGetCmdCtrl) for _SlEventMaskGetCmdCtrl
+    device.o(.text.sl_EventMaskGet) refers to driver.o(.text._SlDrvCmdOp) for _SlDrvCmdOp
+    device.o(.ARM.exidx.text.sl_EventMaskGet) refers to device.o(.text.sl_EventMaskGet) for [Anonymous Symbol]
+    device.o(.text.sl_DevGet) refers to device.o(.rodata._SlDeviceGetCmdCtrl) for _SlDeviceGetCmdCtrl
+    device.o(.text.sl_DevGet) refers to driver.o(.text._SlDrvCmdOp) for _SlDrvCmdOp
+    device.o(.ARM.exidx.text.sl_DevGet) refers to device.o(.text.sl_DevGet) for [Anonymous Symbol]
+    device.o(.text.sl_DevSet) refers to device.o(.rodata._SlDeviceSetCmdCtrl) for _SlDeviceSetCmdCtrl
+    device.o(.text.sl_DevSet) refers to driver.o(.text._SlDrvCmdOp) for _SlDrvCmdOp
+    device.o(.ARM.exidx.text.sl_DevSet) refers to device.o(.text.sl_DevSet) for [Anonymous Symbol]
+    device.o(.text._SlDrvDeviceEventHandler) refers to device.o(.text._sl_HandleAsync_InitComplete) for _sl_HandleAsync_InitComplete
+    device.o(.text._SlDrvDeviceEventHandler) refers to device.o(.text._sl_HandleAsync_Stop) for _sl_HandleAsync_Stop
+    device.o(.ARM.exidx.text._SlDrvDeviceEventHandler) refers to device.o(.text._SlDrvDeviceEventHandler) for [Anonymous Symbol]
+    driver.o(.text._SlDrvDriverCBInit) refers to driver.o(.bss.g_StatMem) for g_StatMem
+    driver.o(.text._SlDrvDriverCBInit) refers to driver.o(.bss.g_pCB) for g_pCB
+    driver.o(.text._SlDrvDriverCBInit) refers to memseta.o(.text) for __aeabi_memclr4
+    driver.o(.text._SlDrvDriverCBInit) refers to nonos.o(.text._SlNonOsSemSet) for _SlNonOsSemSet
+    driver.o(.text._SlDrvDriverCBInit) refers to nonos.o(.text._SlNonOsSemGet) for _SlNonOsSemGet
+    driver.o(.text._SlDrvDriverCBInit) refers to flowcont.o(.text._SlDrvFlowContInit) for _SlDrvFlowContInit
+    driver.o(.ARM.exidx.text._SlDrvDriverCBInit) refers to driver.o(.text._SlDrvDriverCBInit) for [Anonymous Symbol]
+    driver.o(.text._SlDrvObjInit) refers to driver.o(.bss.g_pCB) for g_pCB
+    driver.o(.text._SlDrvObjInit) refers to memseta.o(.text) for __aeabi_memclr4
+    driver.o(.ARM.exidx.text._SlDrvObjInit) refers to driver.o(.text._SlDrvObjInit) for [Anonymous Symbol]
+    driver.o(.text._SlDrvDriverCBDeinit) refers to flowcont.o(.text._SlDrvFlowContDeinit) for _SlDrvFlowContDeinit
+    driver.o(.text._SlDrvDriverCBDeinit) refers to driver.o(.bss.g_pCB) for g_pCB
+    driver.o(.text._SlDrvDriverCBDeinit) refers to nonos.o(.text._SlNonOsSemSet) for _SlNonOsSemSet
+    driver.o(.ARM.exidx.text._SlDrvDriverCBDeinit) refers to driver.o(.text._SlDrvDriverCBDeinit) for [Anonymous Symbol]
+    driver.o(.text._SlDrvObjDeInit) refers to driver.o(.bss.g_pCB) for g_pCB
+    driver.o(.ARM.exidx.text._SlDrvObjDeInit) refers to driver.o(.text._SlDrvObjDeInit) for [Anonymous Symbol]
+    driver.o(.text._SlDrvRxIrqHandler) refers to driver.o(.bss.g_pCB) for g_pCB
+    driver.o(.text._SlDrvRxIrqHandler) refers to nonos.o(.text._SlNonOsSemSet) for _SlNonOsSemSet
+    driver.o(.text._SlDrvRxIrqHandler) refers to driver.o(.text._SlDrvMsgReadSpawnCtx) for _SlDrvMsgReadSpawnCtx
+    driver.o(.text._SlDrvRxIrqHandler) refers to nonos.o(.text._SlNonOsSpawn) for _SlNonOsSpawn
+    driver.o(.ARM.exidx.text._SlDrvRxIrqHandler) refers to driver.o(.text._SlDrvRxIrqHandler) for [Anonymous Symbol]
+    driver.o(.text._SlDrvMsgReadSpawnCtx) refers to driver.o(.bss.g_pCB) for g_pCB
+    driver.o(.text._SlDrvMsgReadSpawnCtx) refers to nonos.o(.text._SlNonOsSemGet) for _SlNonOsSemGet
+    driver.o(.text._SlDrvMsgReadSpawnCtx) refers to nonos.o(.text._SlNonOsSemSet) for _SlNonOsSemSet
+    driver.o(.text._SlDrvMsgReadSpawnCtx) refers to driver.o(.text._SlDrvMsgRead) for _SlDrvMsgRead
+    driver.o(.text._SlDrvMsgReadSpawnCtx) refers to driver.o(.text._SlAsyncEventGenericHandler) for _SlAsyncEventGenericHandler
+    driver.o(.ARM.exidx.text._SlDrvMsgReadSpawnCtx) refers to driver.o(.text._SlDrvMsgReadSpawnCtx) for [Anonymous Symbol]
+    driver.o(.text._SlDrvCmdOp) refers to driver.o(.bss.g_pCB) for g_pCB
+    driver.o(.text._SlDrvCmdOp) refers to nonos.o(.text._SlNonOsSemGet) for _SlNonOsSemGet
+    driver.o(.text._SlDrvCmdOp) refers to driver.o(.text._SlDrvMsgWrite) for _SlDrvMsgWrite
+    driver.o(.text._SlDrvCmdOp) refers to driver.o(.text._SlDrvMsgReadCmdCtx) for _SlDrvMsgReadCmdCtx
+    driver.o(.ARM.exidx.text._SlDrvCmdOp) refers to driver.o(.text._SlDrvCmdOp) for [Anonymous Symbol]
+    driver.o(.text._SlDrvMsgWrite) refers to driver.o(.bss.g_pCB) for g_pCB
+    driver.o(.text._SlDrvMsgWrite) refers to driver.o(.rodata.g_H2NSyncPattern) for g_H2NSyncPattern
+    driver.o(.text._SlDrvMsgWrite) refers to spi.o(.text.spi_Write) for spi_Write
+    driver.o(.ARM.exidx.text._SlDrvMsgWrite) refers to driver.o(.text._SlDrvMsgWrite) for [Anonymous Symbol]
+    driver.o(.text._SlDrvMsgReadCmdCtx) refers to driver.o(.bss.g_pCB) for g_pCB
+    driver.o(.text._SlDrvMsgReadCmdCtx) refers to nonos.o(.text._SlNonOsSemGet) for _SlNonOsSemGet
+    driver.o(.text._SlDrvMsgReadCmdCtx) refers to driver.o(.text._SlDrvMsgRead) for _SlDrvMsgRead
+    driver.o(.text._SlDrvMsgReadCmdCtx) refers to driver.o(.text._SlAsyncEventGenericHandler) for _SlAsyncEventGenericHandler
+    driver.o(.text._SlDrvMsgReadCmdCtx) refers to nonos.o(.text._SlNonOsSemSet) for _SlNonOsSemSet
+    driver.o(.text._SlDrvMsgReadCmdCtx) refers to driver.o(.text._SlDrvMsgReadSpawnCtx) for _SlDrvMsgReadSpawnCtx
+    driver.o(.text._SlDrvMsgReadCmdCtx) refers to nonos.o(.text._SlNonOsSpawn) for _SlNonOsSpawn
+    driver.o(.ARM.exidx.text._SlDrvMsgReadCmdCtx) refers to driver.o(.text._SlDrvMsgReadCmdCtx) for [Anonymous Symbol]
+    driver.o(.text._SlDrvCmdSend) refers to driver.o(.bss.g_pCB) for g_pCB
+    driver.o(.text._SlDrvCmdSend) refers to driver.o(.text._SlDrvMsgWrite) for _SlDrvMsgWrite
+    driver.o(.ARM.exidx.text._SlDrvCmdSend) refers to driver.o(.text._SlDrvCmdSend) for [Anonymous Symbol]
+    driver.o(.text._SlDrvDataReadOp) refers to driver.o(.text._SlDrvWaitForPoolObj) for _SlDrvWaitForPoolObj
+    driver.o(.text._SlDrvDataReadOp) refers to driver.o(.bss.g_pCB) for g_pCB
+    driver.o(.text._SlDrvDataReadOp) refers to nonos.o(.text._SlNonOsSemGet) for _SlNonOsSemGet
+    driver.o(.text._SlDrvDataReadOp) refers to nonos.o(.text._SlNonOsSemSet) for _SlNonOsSemSet
+    driver.o(.text._SlDrvDataReadOp) refers to driver.o(.text._SlDrvMsgWrite) for _SlDrvMsgWrite
+    driver.o(.text._SlDrvDataReadOp) refers to driver.o(.text._SlDrvReleasePoolObj) for _SlDrvReleasePoolObj
+    driver.o(.ARM.exidx.text._SlDrvDataReadOp) refers to driver.o(.text._SlDrvDataReadOp) for [Anonymous Symbol]
+    driver.o(.text._SlDrvWaitForPoolObj) refers to driver.o(.bss.g_pCB) for g_pCB
+    driver.o(.text._SlDrvWaitForPoolObj) refers to nonos.o(.text._SlNonOsSemGet) for _SlNonOsSemGet
+    driver.o(.text._SlDrvWaitForPoolObj) refers to nonos.o(.text._SlNonOsSemSet) for _SlNonOsSemSet
+    driver.o(.ARM.exidx.text._SlDrvWaitForPoolObj) refers to driver.o(.text._SlDrvWaitForPoolObj) for [Anonymous Symbol]
+    driver.o(.text._SlDrvReleasePoolObj) refers to driver.o(.bss.g_pCB) for g_pCB
+    driver.o(.text._SlDrvReleasePoolObj) refers to nonos.o(.text._SlNonOsSemGet) for _SlNonOsSemGet
+    driver.o(.text._SlDrvReleasePoolObj) refers to driver.o(.text._SlRemoveFromList) for _SlRemoveFromList
+    driver.o(.text._SlDrvReleasePoolObj) refers to nonos.o(.text._SlNonOsSemSet) for _SlNonOsSemSet
+    driver.o(.ARM.exidx.text._SlDrvReleasePoolObj) refers to driver.o(.text._SlDrvReleasePoolObj) for [Anonymous Symbol]
+    driver.o(.text._SlDrvDataWriteOp) refers to driver.o(.bss.g_pCB) for g_pCB
+    driver.o(.text._SlDrvDataWriteOp) refers to nonos.o(.text._SlNonOsSemGet) for _SlNonOsSemGet
+    driver.o(.text._SlDrvDataWriteOp) refers to nonos.o(.text._SlNonOsSemSet) for _SlNonOsSemSet
+    driver.o(.text._SlDrvDataWriteOp) refers to driver.o(.text._SlDrvMsgWrite) for _SlDrvMsgWrite
+    driver.o(.ARM.exidx.text._SlDrvDataWriteOp) refers to driver.o(.text._SlDrvDataWriteOp) for [Anonymous Symbol]
+    driver.o(.text._SlDrvMsgRead) refers to driver.o(.text._SlDrvRxHdrRead) for _SlDrvRxHdrRead
+    driver.o(.text._SlDrvMsgRead) refers to driver.o(.bss.g_pCB) for g_pCB
+    driver.o(.text._SlDrvMsgRead) refers to nonos.o(.text._SlNonOsSemSet) for _SlNonOsSemSet
+    driver.o(.text._SlDrvMsgRead) refers to driver.o(.text._SlDrvClassifyRxMsg) for _SlDrvClassifyRxMsg
+    driver.o(.text._SlDrvMsgRead) refers to spi.o(.text.spi_Read) for spi_Read
+    driver.o(.text._SlDrvMsgRead) refers to memmovea.o(.text) for __aeabi_memcpy
+    driver.o(.text._SlDrvMsgRead) refers to driver.o(.bss.g_StatMem) for g_StatMem
+    driver.o(.text._SlDrvMsgRead) refers to nonos.o(.text._SlNonOsSemGet) for _SlNonOsSemGet
+    driver.o(.text._SlDrvMsgRead) refers to driver.o(.text._SlFindAndSetActiveObj) for _SlFindAndSetActiveObj
+    driver.o(.ARM.exidx.text._SlDrvMsgRead) refers to driver.o(.text._SlDrvMsgRead) for [Anonymous Symbol]
+    driver.o(.text._SlDrvRxHdrRead) refers to driver.o(.bss.g_pCB) for g_pCB
+    driver.o(.text._SlDrvRxHdrRead) refers to driver.o(.rodata.g_H2NCnysPattern) for g_H2NCnysPattern
+    driver.o(.text._SlDrvRxHdrRead) refers to spi.o(.text.spi_Write) for spi_Write
+    driver.o(.text._SlDrvRxHdrRead) refers to spi.o(.text.spi_Read) for spi_Read
+    driver.o(.text._SlDrvRxHdrRead) refers to memmovea.o(.text) for __aeabi_memmove
+    driver.o(.ARM.exidx.text._SlDrvRxHdrRead) refers to driver.o(.text._SlDrvRxHdrRead) for [Anonymous Symbol]
+    driver.o(.text._SlDrvClassifyRxMsg) refers to driver.o(.bss.g_pCB) for g_pCB
+    driver.o(.text._SlDrvClassifyRxMsg) refers to device.o(.text._SlDrvDeviceEventHandler) for _SlDrvDeviceEventHandler
+    driver.o(.text._SlDrvClassifyRxMsg) refers to netapp.o(.text._SlDrvNetAppEventHandler) for _SlDrvNetAppEventHandler
+    driver.o(.text._SlDrvClassifyRxMsg) refers to mainnokia5110.o(.text.SimpleLinkWlanEventHandler) for SimpleLinkWlanEventHandler
+    driver.o(.text._SlDrvClassifyRxMsg) refers to mainnokia5110.o(.text.SimpleLinkNetAppEventHandler) for SimpleLinkNetAppEventHandler
+    driver.o(.ARM.exidx.text._SlDrvClassifyRxMsg) refers to driver.o(.text._SlDrvClassifyRxMsg) for [Anonymous Symbol]
+    driver.o(.text._SlFindAndSetActiveObj) refers to driver.o(.bss.g_pCB) for g_pCB
+    driver.o(.text._SlFindAndSetActiveObj) refers to driver.o(.rodata._SlActionLookupTable) for _SlActionLookupTable
+    driver.o(.ARM.exidx.text._SlFindAndSetActiveObj) refers to driver.o(.text._SlFindAndSetActiveObj) for [Anonymous Symbol]
+    driver.o(.text._SlAsyncEventGenericHandler) refers to driver.o(.bss.g_pCB) for g_pCB
+    driver.o(.text._SlAsyncEventGenericHandler) refers to memseta.o(.text) for __aeabi_memclr4
+    driver.o(.text._SlAsyncEventGenericHandler) refers to memmovea.o(.text) for __aeabi_memcpy
+    driver.o(.text._SlAsyncEventGenericHandler) refers to netapp.o(.text._sl_HandleAsync_PingResponse) for _sl_HandleAsync_PingResponse
+    driver.o(.ARM.exidx.text._SlAsyncEventGenericHandler) refers to driver.o(.text._SlAsyncEventGenericHandler) for [Anonymous Symbol]
+    driver.o(.text._SlDrvShiftDWord) refers to memmovea.o(.text) for __aeabi_memmove
+    driver.o(.ARM.exidx.text._SlDrvShiftDWord) refers to driver.o(.text._SlDrvShiftDWord) for [Anonymous Symbol]
+    driver.o(.text._SlDrvBasicCmd) refers to driver.o(.text._SlDrvCmdOp) for _SlDrvCmdOp
+    driver.o(.ARM.exidx.text._SlDrvBasicCmd) refers to driver.o(.text._SlDrvBasicCmd) for [Anonymous Symbol]
+    driver.o(.text._SlRemoveFromList) refers to driver.o(.bss.g_pCB) for g_pCB
+    driver.o(.ARM.exidx.text._SlRemoveFromList) refers to driver.o(.text._SlRemoveFromList) for [Anonymous Symbol]
+    driver.o(.rodata._SlActionLookupTable) refers to socket.o(.text._sl_HandleAsync_Accept) for _sl_HandleAsync_Accept
+    driver.o(.rodata._SlActionLookupTable) refers to socket.o(.text._sl_HandleAsync_Connect) for _sl_HandleAsync_Connect
+    driver.o(.rodata._SlActionLookupTable) refers to socket.o(.text._sl_HandleAsync_Select) for _sl_HandleAsync_Select
+    driver.o(.rodata._SlActionLookupTable) refers to netapp.o(.text._sl_HandleAsync_DnsGetHostByName) for _sl_HandleAsync_DnsGetHostByName
+    driver.o(.rodata._SlActionLookupTable) refers to netapp.o(.text._sl_HandleAsync_DnsGetHostByService) for _sl_HandleAsync_DnsGetHostByService
+    driver.o(.rodata._SlActionLookupTable) refers to netapp.o(.text._sl_HandleAsync_PingResponse) for _sl_HandleAsync_PingResponse
+    driver.o(.rodata._SlActionLookupTable) refers to device.o(.text._sl_HandleAsync_Stop) for _sl_HandleAsync_Stop
+    flowcont.o(.text._SlDrvFlowContInit) refers to driver.o(.bss.g_pCB) for g_pCB
+    flowcont.o(.text._SlDrvFlowContInit) refers to nonos.o(.text._SlNonOsSemSet) for _SlNonOsSemSet
+    flowcont.o(.ARM.exidx.text._SlDrvFlowContInit) refers to flowcont.o(.text._SlDrvFlowContInit) for [Anonymous Symbol]
+    flowcont.o(.text._SlDrvFlowContDeinit) refers to driver.o(.bss.g_pCB) for g_pCB
+    flowcont.o(.text._SlDrvFlowContDeinit) refers to nonos.o(.text._SlNonOsSemSet) for _SlNonOsSemSet
+    flowcont.o(.ARM.exidx.text._SlDrvFlowContDeinit) refers to flowcont.o(.text._SlDrvFlowContDeinit) for [Anonymous Symbol]
+    fs.o(.ARM.exidx.text.sl_Strlen) refers to fs.o(.text.sl_Strlen) for [Anonymous Symbol]
+    fs.o(.ARM.exidx.text._GetCreateFsMode) refers to fs.o(.text._GetCreateFsMode) for [Anonymous Symbol]
+    fs.o(.text.sl_FsOpen) refers to fs.o(.rodata._SlFsOpenCmdCtrl) for _SlFsOpenCmdCtrl
+    fs.o(.text.sl_FsOpen) refers to driver.o(.text._SlDrvCmdOp) for _SlDrvCmdOp
+    fs.o(.ARM.exidx.text.sl_FsOpen) refers to fs.o(.text.sl_FsOpen) for [Anonymous Symbol]
+    fs.o(.text.sl_FsClose) refers to driver.o(.bss.g_pCB) for g_pCB
+    fs.o(.text.sl_FsClose) refers to fs.o(.rodata._SlFsCloseCmdCtrl) for _SlFsCloseCmdCtrl
+    fs.o(.text.sl_FsClose) refers to driver.o(.text._SlDrvCmdOp) for _SlDrvCmdOp
+    fs.o(.ARM.exidx.text.sl_FsClose) refers to fs.o(.text.sl_FsClose) for [Anonymous Symbol]
+    fs.o(.text.sl_FsRead) refers to fs.o(.rodata._SlFsReadCmdCtrl) for _SlFsReadCmdCtrl
+    fs.o(.text.sl_FsRead) refers to driver.o(.text._SlDrvCmdOp) for _SlDrvCmdOp
+    fs.o(.ARM.exidx.text.sl_FsRead) refers to fs.o(.text.sl_FsRead) for [Anonymous Symbol]
+    fs.o(.text.sl_FsWrite) refers to fs.o(.rodata._SlFsWriteCmdCtrl) for _SlFsWriteCmdCtrl
+    fs.o(.text.sl_FsWrite) refers to driver.o(.text._SlDrvCmdOp) for _SlDrvCmdOp
+    fs.o(.ARM.exidx.text.sl_FsWrite) refers to fs.o(.text.sl_FsWrite) for [Anonymous Symbol]
+    fs.o(.text.sl_FsGetInfo) refers to fs.o(.rodata._SlFsGetInfoCmdCtrl) for _SlFsGetInfoCmdCtrl
+    fs.o(.text.sl_FsGetInfo) refers to driver.o(.text._SlDrvCmdOp) for _SlDrvCmdOp
+    fs.o(.ARM.exidx.text.sl_FsGetInfo) refers to fs.o(.text.sl_FsGetInfo) for [Anonymous Symbol]
+    fs.o(.text.sl_FsDel) refers to fs.o(.rodata._SlFsDeleteCmdCtrl) for _SlFsDeleteCmdCtrl
+    fs.o(.text.sl_FsDel) refers to driver.o(.text._SlDrvCmdOp) for _SlDrvCmdOp
+    fs.o(.ARM.exidx.text.sl_FsDel) refers to fs.o(.text.sl_FsDel) for [Anonymous Symbol]
+    netapp.o(.text.sl_NetAppStart) refers to netapp.o(.rodata._SlNetAppStartCtrl) for _SlNetAppStartCtrl
+    netapp.o(.text.sl_NetAppStart) refers to driver.o(.text._SlDrvCmdOp) for _SlDrvCmdOp
+    netapp.o(.ARM.exidx.text.sl_NetAppStart) refers to netapp.o(.text.sl_NetAppStart) for [Anonymous Symbol]
+    netapp.o(.text.sl_NetAppStop) refers to netapp.o(.rodata._SlNetAppStopCtrl) for _SlNetAppStopCtrl
+    netapp.o(.text.sl_NetAppStop) refers to driver.o(.text._SlDrvCmdOp) for _SlDrvCmdOp
+    netapp.o(.ARM.exidx.text.sl_NetAppStop) refers to netapp.o(.text.sl_NetAppStop) for [Anonymous Symbol]
+    netapp.o(.text.sl_NetAppGetServiceList) refers to netapp.o(.rodata..Lswitch.table.sl_NetAppGetServiceList) for .Lswitch.table.sl_NetAppGetServiceList
+    netapp.o(.text.sl_NetAppGetServiceList) refers to netapp.o(.rodata._SlGetServiceListeCtrl) for _SlGetServiceListeCtrl
+    netapp.o(.text.sl_NetAppGetServiceList) refers to driver.o(.text._SlDrvCmdOp) for _SlDrvCmdOp
+    netapp.o(.ARM.exidx.text.sl_NetAppGetServiceList) refers to netapp.o(.text.sl_NetAppGetServiceList) for [Anonymous Symbol]
+    netapp.o(.text.sl_NetAppMDNSRegisterUnregisterService) refers to memseta.o(.text) for __aeabi_memclr
+    netapp.o(.text.sl_NetAppMDNSRegisterUnregisterService) refers to memmovea.o(.text) for __aeabi_memcpy
+    netapp.o(.text.sl_NetAppMDNSRegisterUnregisterService) refers to netapp.o(.rodata._SlRegisterServiceCtrl) for _SlRegisterServiceCtrl
+    netapp.o(.text.sl_NetAppMDNSRegisterUnregisterService) refers to driver.o(.text._SlDrvCmdOp) for _SlDrvCmdOp
+    netapp.o(.ARM.exidx.text.sl_NetAppMDNSRegisterUnregisterService) refers to netapp.o(.text.sl_NetAppMDNSRegisterUnregisterService) for [Anonymous Symbol]
+    netapp.o(.text.sl_NetAppMDNSRegisterService) refers to netapp.o(.text.sl_NetAppMDNSRegisterUnregisterService) for sl_NetAppMDNSRegisterUnregisterService
+    netapp.o(.ARM.exidx.text.sl_NetAppMDNSRegisterService) refers to netapp.o(.text.sl_NetAppMDNSRegisterService) for [Anonymous Symbol]
+    netapp.o(.text.sl_NetAppMDNSUnRegisterService) refers to netapp.o(.text.sl_NetAppMDNSRegisterUnregisterService) for sl_NetAppMDNSRegisterUnregisterService
+    netapp.o(.ARM.exidx.text.sl_NetAppMDNSUnRegisterService) refers to netapp.o(.text.sl_NetAppMDNSUnRegisterService) for [Anonymous Symbol]
+    netapp.o(.text.sl_NetAppDnsGetHostByService) refers to driver.o(.text._SlDrvWaitForPoolObj) for _SlDrvWaitForPoolObj
+    netapp.o(.text.sl_NetAppDnsGetHostByService) refers to driver.o(.bss.g_pCB) for g_pCB
+    netapp.o(.text.sl_NetAppDnsGetHostByService) refers to nonos.o(.text._SlNonOsSemGet) for _SlNonOsSemGet
+    netapp.o(.text.sl_NetAppDnsGetHostByService) refers to nonos.o(.text._SlNonOsSemSet) for _SlNonOsSemSet
+    netapp.o(.text.sl_NetAppDnsGetHostByService) refers to netapp.o(.rodata._SlGetHostByServiceCtrl) for _SlGetHostByServiceCtrl
+    netapp.o(.text.sl_NetAppDnsGetHostByService) refers to driver.o(.text._SlDrvCmdOp) for _SlDrvCmdOp
+    netapp.o(.text.sl_NetAppDnsGetHostByService) refers to driver.o(.text._SlDrvReleasePoolObj) for _SlDrvReleasePoolObj
+    netapp.o(.ARM.exidx.text.sl_NetAppDnsGetHostByService) refers to netapp.o(.text.sl_NetAppDnsGetHostByService) for [Anonymous Symbol]
+    netapp.o(.text._sl_HandleAsync_DnsGetHostByService) refers to driver.o(.bss.g_pCB) for g_pCB
+    netapp.o(.text._sl_HandleAsync_DnsGetHostByService) refers to memmovea.o(.text) for __aeabi_memcpy
+    netapp.o(.text._sl_HandleAsync_DnsGetHostByService) refers to nonos.o(.text._SlNonOsSemSet) for _SlNonOsSemSet
+    netapp.o(.ARM.exidx.text._sl_HandleAsync_DnsGetHostByService) refers to netapp.o(.text._sl_HandleAsync_DnsGetHostByService) for [Anonymous Symbol]
+    netapp.o(.ARM.exidx.text._sl_HandleAsync_DnsGetHostByAddr) refers to netapp.o(.text._sl_HandleAsync_DnsGetHostByAddr) for [Anonymous Symbol]
+    netapp.o(.text.sl_NetAppDnsGetHostByName) refers to driver.o(.text._SlDrvWaitForPoolObj) for _SlDrvWaitForPoolObj
+    netapp.o(.text.sl_NetAppDnsGetHostByName) refers to driver.o(.bss.g_pCB) for g_pCB
+    netapp.o(.text.sl_NetAppDnsGetHostByName) refers to nonos.o(.text._SlNonOsSemGet) for _SlNonOsSemGet
+    netapp.o(.text.sl_NetAppDnsGetHostByName) refers to nonos.o(.text._SlNonOsSemSet) for _SlNonOsSemSet
+    netapp.o(.text.sl_NetAppDnsGetHostByName) refers to netapp.o(.rodata._SlGetHostByNameCtrl) for _SlGetHostByNameCtrl
+    netapp.o(.text.sl_NetAppDnsGetHostByName) refers to driver.o(.text._SlDrvCmdOp) for _SlDrvCmdOp
+    netapp.o(.text.sl_NetAppDnsGetHostByName) refers to driver.o(.text._SlDrvReleasePoolObj) for _SlDrvReleasePoolObj
+    netapp.o(.text.sl_NetAppDnsGetHostByName) refers to memmovea.o(.text) for __aeabi_memcpy
+    netapp.o(.ARM.exidx.text.sl_NetAppDnsGetHostByName) refers to netapp.o(.text.sl_NetAppDnsGetHostByName) for [Anonymous Symbol]
+    netapp.o(.text._sl_HandleAsync_DnsGetHostByName) refers to driver.o(.bss.g_pCB) for g_pCB
+    netapp.o(.text._sl_HandleAsync_DnsGetHostByName) refers to nonos.o(.text._SlNonOsSemGet) for _SlNonOsSemGet
+    netapp.o(.text._sl_HandleAsync_DnsGetHostByName) refers to memmovea.o(.text) for __aeabi_memcpy
+    netapp.o(.text._sl_HandleAsync_DnsGetHostByName) refers to nonos.o(.text._SlNonOsSemSet) for _SlNonOsSemSet
+    netapp.o(.ARM.exidx.text._sl_HandleAsync_DnsGetHostByName) refers to netapp.o(.text._sl_HandleAsync_DnsGetHostByName) for [Anonymous Symbol]
+    netapp.o(.ARM.exidx.text.CopyPingResultsToReport) refers to netapp.o(.text.CopyPingResultsToReport) for [Anonymous Symbol]
+    netapp.o(.text._sl_HandleAsync_PingResponse) refers to driver.o(.bss.pPingCallBackFunc) for pPingCallBackFunc
+    netapp.o(.text._sl_HandleAsync_PingResponse) refers to driver.o(.bss.g_pCB) for g_pCB
+    netapp.o(.text._sl_HandleAsync_PingResponse) refers to nonos.o(.text._SlNonOsSemGet) for _SlNonOsSemGet
+    netapp.o(.text._sl_HandleAsync_PingResponse) refers to memmovea.o(.text) for __aeabi_memcpy
+    netapp.o(.text._sl_HandleAsync_PingResponse) refers to nonos.o(.text._SlNonOsSemSet) for _SlNonOsSemSet
+    netapp.o(.ARM.exidx.text._sl_HandleAsync_PingResponse) refers to netapp.o(.text._sl_HandleAsync_PingResponse) for [Anonymous Symbol]
+    netapp.o(.text.sl_NetAppPingStart) refers to driver.o(.text._SlDrvBasicCmd) for _SlDrvBasicCmd
+    netapp.o(.text.sl_NetAppPingStart) refers to driver.o(.bss.pPingCallBackFunc) for pPingCallBackFunc
+    netapp.o(.text.sl_NetAppPingStart) refers to driver.o(.text._SlDrvCmdOp) for _SlDrvCmdOp
+    netapp.o(.text.sl_NetAppPingStart) refers to driver.o(.text._SlDrvWaitForPoolObj) for _SlDrvWaitForPoolObj
+    netapp.o(.text.sl_NetAppPingStart) refers to driver.o(.bss.g_pCB) for g_pCB
+    netapp.o(.text.sl_NetAppPingStart) refers to nonos.o(.text._SlNonOsSemGet) for _SlNonOsSemGet
+    netapp.o(.text.sl_NetAppPingStart) refers to driver.o(.text._SlDrvReleasePoolObj) for _SlDrvReleasePoolObj
+    netapp.o(.text.sl_NetAppPingStart) refers to nonos.o(.text._SlNonOsSemSet) for _SlNonOsSemSet
+    netapp.o(.ARM.exidx.text.sl_NetAppPingStart) refers to netapp.o(.text.sl_NetAppPingStart) for [Anonymous Symbol]
+    netapp.o(.text.sl_NetAppSet) refers to netapp.o(.rodata._SlNetAppSetCmdCtrl) for _SlNetAppSetCmdCtrl
+    netapp.o(.text.sl_NetAppSet) refers to driver.o(.text._SlDrvCmdOp) for _SlDrvCmdOp
+    netapp.o(.ARM.exidx.text.sl_NetAppSet) refers to netapp.o(.text.sl_NetAppSet) for [Anonymous Symbol]
+    netapp.o(.text.sl_NetAppSendTokenValue) refers to memmovea.o(.text) for __aeabi_memcpy
+    netapp.o(.text.sl_NetAppSendTokenValue) refers to netapp.o(.rodata._SlNetAppSendTokenValueCmdCtrl) for _SlNetAppSendTokenValueCmdCtrl
+    netapp.o(.text.sl_NetAppSendTokenValue) refers to driver.o(.text._SlDrvCmdSend) for _SlDrvCmdSend
+    netapp.o(.ARM.exidx.text.sl_NetAppSendTokenValue) refers to netapp.o(.text.sl_NetAppSendTokenValue) for [Anonymous Symbol]
+    netapp.o(.text.sl_NetAppGet) refers to netapp.o(.rodata._SlNetAppGetCmdCtrl) for _SlNetAppGetCmdCtrl
+    netapp.o(.text.sl_NetAppGet) refers to driver.o(.text._SlDrvCmdOp) for _SlDrvCmdOp
+    netapp.o(.ARM.exidx.text.sl_NetAppGet) refers to netapp.o(.text.sl_NetAppGet) for [Anonymous Symbol]
+    netapp.o(.text._SlDrvNetAppEventHandler) refers to mainnokia5110.o(.text.SimpleLinkHttpServerCallback) for SimpleLinkHttpServerCallback
+    netapp.o(.text._SlDrvNetAppEventHandler) refers to netapp.o(.text.sl_NetAppSendTokenValue) for sl_NetAppSendTokenValue
+    netapp.o(.text._SlDrvNetAppEventHandler) refers to netapp.o(.text._sl_HandleAsync_DnsGetHostByService) for _sl_HandleAsync_DnsGetHostByService
+    netapp.o(.text._SlDrvNetAppEventHandler) refers to netapp.o(.text._sl_HandleAsync_DnsGetHostByName) for _sl_HandleAsync_DnsGetHostByName
+    netapp.o(.text._SlDrvNetAppEventHandler) refers to netapp.o(.text._sl_HandleAsync_PingResponse) for _sl_HandleAsync_PingResponse
+    netapp.o(.ARM.exidx.text._SlDrvNetAppEventHandler) refers to netapp.o(.text._SlDrvNetAppEventHandler) for [Anonymous Symbol]
+    netcfg.o(.text.sl_NetCfgSet) refers to netcfg.o(.rodata._SlNetCfgSetCmdCtrl) for _SlNetCfgSetCmdCtrl
+    netcfg.o(.text.sl_NetCfgSet) refers to driver.o(.text._SlDrvCmdOp) for _SlDrvCmdOp
+    netcfg.o(.ARM.exidx.text.sl_NetCfgSet) refers to netcfg.o(.text.sl_NetCfgSet) for [Anonymous Symbol]
+    netcfg.o(.text.sl_NetCfgGet) refers to netcfg.o(.rodata._SlNetCfgGetCmdCtrl) for _SlNetCfgGetCmdCtrl
+    netcfg.o(.text.sl_NetCfgGet) refers to driver.o(.text._SlDrvCmdOp) for _SlDrvCmdOp
+    netcfg.o(.ARM.exidx.text.sl_NetCfgGet) refers to netcfg.o(.text.sl_NetCfgGet) for [Anonymous Symbol]
+    nonos.o(.ARM.exidx.text._SlNonOsSemSet) refers to nonos.o(.text._SlNonOsSemSet) for [Anonymous Symbol]
+    nonos.o(.text._SlNonOsSemGet) refers to nonos.o(.text._SlNonOsMainLoopTask) for _SlNonOsMainLoopTask
+    nonos.o(.ARM.exidx.text._SlNonOsSemGet) refers to nonos.o(.text._SlNonOsSemGet) for [Anonymous Symbol]
+    nonos.o(.text._SlNonOsMainLoopTask) refers to nonos.o(.bss.g__SlNonOsCB) for g__SlNonOsCB
+    nonos.o(.text._SlNonOsMainLoopTask) refers to driver.o(.bss.g_pCB) for g_pCB
+    nonos.o(.ARM.exidx.text._SlNonOsMainLoopTask) refers to nonos.o(.text._SlNonOsMainLoopTask) for [Anonymous Symbol]
+    nonos.o(.text._SlNonOsSpawn) refers to nonos.o(.bss.g__SlNonOsCB) for g__SlNonOsCB
+    nonos.o(.ARM.exidx.text._SlNonOsSpawn) refers to nonos.o(.text._SlNonOsSpawn) for [Anonymous Symbol]
+    socket.o(.ARM.exidx.text._sl_BuildAddress) refers to socket.o(.text._sl_BuildAddress) for [Anonymous Symbol]
+    socket.o(.ARM.exidx.text._sl_TruncatePayloadByProtocol) refers to socket.o(.text._sl_TruncatePayloadByProtocol) for [Anonymous Symbol]
+    socket.o(.ARM.exidx.text._sl_ParseAddress) refers to socket.o(.text._sl_ParseAddress) for [Anonymous Symbol]
+    socket.o(.text.sl_Socket) refers to socket.o(.rodata._SlSockSocketCmdCtrl) for _SlSockSocketCmdCtrl
+    socket.o(.text.sl_Socket) refers to driver.o(.text._SlDrvCmdOp) for _SlDrvCmdOp
+    socket.o(.ARM.exidx.text.sl_Socket) refers to socket.o(.text.sl_Socket) for [Anonymous Symbol]
+    socket.o(.text.sl_Close) refers to socket.o(.rodata._SlSockCloseCmdCtrl) for _SlSockCloseCmdCtrl
+    socket.o(.text.sl_Close) refers to driver.o(.text._SlDrvCmdOp) for _SlDrvCmdOp
+    socket.o(.ARM.exidx.text.sl_Close) refers to socket.o(.text.sl_Close) for [Anonymous Symbol]
+    socket.o(.text.sl_Bind) refers to driver.o(.text._SlDrvCmdOp) for _SlDrvCmdOp
+    socket.o(.ARM.exidx.text.sl_Bind) refers to socket.o(.text.sl_Bind) for [Anonymous Symbol]
+    socket.o(.text.sl_SendTo) refers to socket.o(.text._sl_TruncatePayloadByProtocol) for _sl_TruncatePayloadByProtocol
+    socket.o(.text.sl_SendTo) refers to driver.o(.text._SlDrvDataWriteOp) for _SlDrvDataWriteOp
+    socket.o(.ARM.exidx.text.sl_SendTo) refers to socket.o(.text.sl_SendTo) for [Anonymous Symbol]
+    socket.o(.text.sl_RecvFrom) refers to socket.o(.rodata._SlRecvfomCmdCtrl) for _SlRecvfomCmdCtrl
+    socket.o(.text.sl_RecvFrom) refers to driver.o(.text._SlDrvDataReadOp) for _SlDrvDataReadOp
+    socket.o(.ARM.exidx.text.sl_RecvFrom) refers to socket.o(.text.sl_RecvFrom) for [Anonymous Symbol]
+    socket.o(.text.sl_Connect) refers to driver.o(.text._SlDrvWaitForPoolObj) for _SlDrvWaitForPoolObj
+    socket.o(.text.sl_Connect) refers to driver.o(.bss.g_pCB) for g_pCB
+    socket.o(.text.sl_Connect) refers to nonos.o(.text._SlNonOsSemGet) for _SlNonOsSemGet
+    socket.o(.text.sl_Connect) refers to nonos.o(.text._SlNonOsSemSet) for _SlNonOsSemSet
+    socket.o(.text.sl_Connect) refers to driver.o(.text._SlDrvCmdOp) for _SlDrvCmdOp
+    socket.o(.text.sl_Connect) refers to driver.o(.text._SlDrvReleasePoolObj) for _SlDrvReleasePoolObj
+    socket.o(.ARM.exidx.text.sl_Connect) refers to socket.o(.text.sl_Connect) for [Anonymous Symbol]
+    socket.o(.text._sl_HandleAsync_Connect) refers to driver.o(.bss.g_pCB) for g_pCB
+    socket.o(.text._sl_HandleAsync_Connect) refers to nonos.o(.text._SlNonOsSemGet) for _SlNonOsSemGet
+    socket.o(.text._sl_HandleAsync_Connect) refers to nonos.o(.text._SlNonOsSemSet) for _SlNonOsSemSet
+    socket.o(.ARM.exidx.text._sl_HandleAsync_Connect) refers to socket.o(.text._sl_HandleAsync_Connect) for [Anonymous Symbol]
+    socket.o(.text.sl_Send) refers to driver.o(.bss.g_pCB) for g_pCB
+    socket.o(.text.sl_Send) refers to socket.o(.text._sl_TruncatePayloadByProtocol) for _sl_TruncatePayloadByProtocol
+    socket.o(.text.sl_Send) refers to socket.o(.rodata._SlSendCmdCtrl) for _SlSendCmdCtrl
+    socket.o(.text.sl_Send) refers to driver.o(.text._SlDrvDataWriteOp) for _SlDrvDataWriteOp
+    socket.o(.ARM.exidx.text.sl_Send) refers to socket.o(.text.sl_Send) for [Anonymous Symbol]
+    socket.o(.text.sl_Listen) refers to socket.o(.rodata._SlListenCmdCtrl) for _SlListenCmdCtrl
+    socket.o(.text.sl_Listen) refers to driver.o(.text._SlDrvCmdOp) for _SlDrvCmdOp
+    socket.o(.ARM.exidx.text.sl_Listen) refers to socket.o(.text.sl_Listen) for [Anonymous Symbol]
+    socket.o(.text.sl_Accept) refers to driver.o(.text._SlDrvWaitForPoolObj) for _SlDrvWaitForPoolObj
+    socket.o(.text.sl_Accept) refers to driver.o(.bss.g_pCB) for g_pCB
+    socket.o(.text.sl_Accept) refers to nonos.o(.text._SlNonOsSemGet) for _SlNonOsSemGet
+    socket.o(.text.sl_Accept) refers to nonos.o(.text._SlNonOsSemSet) for _SlNonOsSemSet
+    socket.o(.text.sl_Accept) refers to socket.o(.rodata._SlAcceptCmdCtrl) for _SlAcceptCmdCtrl
+    socket.o(.text.sl_Accept) refers to driver.o(.text._SlDrvCmdOp) for _SlDrvCmdOp
+    socket.o(.text.sl_Accept) refers to driver.o(.text._SlDrvReleasePoolObj) for _SlDrvReleasePoolObj
+    socket.o(.ARM.exidx.text.sl_Accept) refers to socket.o(.text.sl_Accept) for [Anonymous Symbol]
+    socket.o(.ARM.exidx.text.sl_Htonl) refers to socket.o(.text.sl_Htonl) for [Anonymous Symbol]
+    socket.o(.ARM.exidx.text.sl_Htons) refers to socket.o(.text.sl_Htons) for [Anonymous Symbol]
+    socket.o(.text._sl_HandleAsync_Accept) refers to driver.o(.bss.g_pCB) for g_pCB
+    socket.o(.text._sl_HandleAsync_Accept) refers to nonos.o(.text._SlNonOsSemGet) for _SlNonOsSemGet
+    socket.o(.text._sl_HandleAsync_Accept) refers to memmovea.o(.text) for __aeabi_memcpy
+    socket.o(.text._sl_HandleAsync_Accept) refers to nonos.o(.text._SlNonOsSemSet) for _SlNonOsSemSet
+    socket.o(.ARM.exidx.text._sl_HandleAsync_Accept) refers to socket.o(.text._sl_HandleAsync_Accept) for [Anonymous Symbol]
+    socket.o(.text.sl_Recv) refers to socket.o(.rodata._SlRecvCmdCtrl) for _SlRecvCmdCtrl
+    socket.o(.text.sl_Recv) refers to driver.o(.text._SlDrvDataReadOp) for _SlDrvDataReadOp
+    socket.o(.ARM.exidx.text.sl_Recv) refers to socket.o(.text.sl_Recv) for [Anonymous Symbol]
+    socket.o(.text.sl_SetSockOpt) refers to socket.o(.rodata._SlSetSockOptCmdCtrl) for _SlSetSockOptCmdCtrl
+    socket.o(.text.sl_SetSockOpt) refers to driver.o(.text._SlDrvCmdOp) for _SlDrvCmdOp
+    socket.o(.ARM.exidx.text.sl_SetSockOpt) refers to socket.o(.text.sl_SetSockOpt) for [Anonymous Symbol]
+    socket.o(.text.sl_GetSockOpt) refers to socket.o(.rodata._SlGetSockOptCmdCtrl) for _SlGetSockOptCmdCtrl
+    socket.o(.text.sl_GetSockOpt) refers to driver.o(.text._SlDrvCmdOp) for _SlDrvCmdOp
+    socket.o(.ARM.exidx.text.sl_GetSockOpt) refers to socket.o(.text.sl_GetSockOpt) for [Anonymous Symbol]
+    socket.o(.text.sl_Select) refers to driver.o(.text._SlDrvWaitForPoolObj) for _SlDrvWaitForPoolObj
+    socket.o(.text.sl_Select) refers to driver.o(.bss.g_pCB) for g_pCB
+    socket.o(.text.sl_Select) refers to nonos.o(.text._SlNonOsSemGet) for _SlNonOsSemGet
+    socket.o(.text.sl_Select) refers to nonos.o(.text._SlNonOsSemSet) for _SlNonOsSemSet
+    socket.o(.text.sl_Select) refers to socket.o(.rodata._SlSelectCmdCtrl) for _SlSelectCmdCtrl
+    socket.o(.text.sl_Select) refers to driver.o(.text._SlDrvCmdOp) for _SlDrvCmdOp
+    socket.o(.text.sl_Select) refers to driver.o(.text._SlDrvReleasePoolObj) for _SlDrvReleasePoolObj
+    socket.o(.ARM.exidx.text.sl_Select) refers to socket.o(.text.sl_Select) for [Anonymous Symbol]
+    socket.o(.ARM.exidx.text.SL_FD_SET) refers to socket.o(.text.SL_FD_SET) for [Anonymous Symbol]
+    socket.o(.ARM.exidx.text.SL_FD_CLR) refers to socket.o(.text.SL_FD_CLR) for [Anonymous Symbol]
+    socket.o(.ARM.exidx.text.SL_FD_ISSET) refers to socket.o(.text.SL_FD_ISSET) for [Anonymous Symbol]
+    socket.o(.ARM.exidx.text.SL_FD_ZERO) refers to socket.o(.text.SL_FD_ZERO) for [Anonymous Symbol]
+    socket.o(.text._sl_HandleAsync_Select) refers to driver.o(.bss.g_pCB) for g_pCB
+    socket.o(.text._sl_HandleAsync_Select) refers to nonos.o(.text._SlNonOsSemGet) for _SlNonOsSemGet
+    socket.o(.text._sl_HandleAsync_Select) refers to nonos.o(.text._SlNonOsSemSet) for _SlNonOsSemSet
+    socket.o(.ARM.exidx.text._sl_HandleAsync_Select) refers to socket.o(.text._sl_HandleAsync_Select) for [Anonymous Symbol]
+    spi.o(.text.spi_Close) refers to board.o(.text.CC3100_InterruptDisable) for CC3100_InterruptDisable
+    spi.o(.ARM.exidx.text.spi_Close) refers to spi.o(.text.spi_Close) for [Anonymous Symbol]
+    spi.o(.text.spi_Open) refers to sysctl.o(i.SysCtlPeripheralEnable) for SysCtlPeripheralEnable
+    spi.o(.text.spi_Open) refers to gpio.o(i.GPIOPinTypeGPIOOutput) for GPIOPinTypeGPIOOutput
+    spi.o(.text.spi_Open) refers to gpio.o(i.GPIOPinWrite) for GPIOPinWrite
+    spi.o(.text.spi_Open) refers to gpio.o(i.GPIOPinConfigure) for GPIOPinConfigure
+    spi.o(.text.spi_Open) refers to gpio.o(i.GPIOPinTypeSSI) for GPIOPinTypeSSI
+    spi.o(.text.spi_Open) refers to sysctl.o(i.SysCtlClockGet) for SysCtlClockGet
+    spi.o(.text.spi_Open) refers to ssi.o(i.SSIConfigSetExpClk) for SSIConfigSetExpClk
+    spi.o(.text.spi_Open) refers to ssi.o(i.SSIEnable) for SSIEnable
+    spi.o(.text.spi_Open) refers to gpio.o(i.GPIOPinTypeGPIOInput) for GPIOPinTypeGPIOInput
+    spi.o(.text.spi_Open) refers to gpio.o(i.GPIOPadConfigSet) for GPIOPadConfigSet
+    spi.o(.text.spi_Open) refers to gpio.o(i.GPIOIntTypeSet) for GPIOIntTypeSet
+    spi.o(.text.spi_Open) refers to gpio.o(i.GPIOIntClear) for GPIOIntClear
+    spi.o(.text.spi_Open) refers to gpio.o(i.GPIOIntDisable) for GPIOIntDisable
+    spi.o(.text.spi_Open) refers to interrupt.o(i.IntEnable) for IntEnable
+    spi.o(.text.spi_Open) refers to interrupt.o(i.IntMasterEnable) for IntMasterEnable
+    spi.o(.text.spi_Open) refers to sysctl.o(.emb_text) for SysCtlDelay
+    spi.o(.text.spi_Open) refers to board.o(.text.CC3100_InterruptEnable) for CC3100_InterruptEnable
+    spi.o(.ARM.exidx.text.spi_Open) refers to spi.o(.text.spi_Open) for [Anonymous Symbol]
+    spi.o(.text.spi_Write) refers to gpio.o(i.GPIOPinWrite) for GPIOPinWrite
+    spi.o(.text.spi_Write) refers to ssi.o(i.SSIDataPutNonBlocking) for SSIDataPutNonBlocking
+    spi.o(.text.spi_Write) refers to ssi.o(i.SSIDataGetNonBlocking) for SSIDataGetNonBlocking
+    spi.o(.ARM.exidx.text.spi_Write) refers to spi.o(.text.spi_Write) for [Anonymous Symbol]
+    spi.o(.text.spi_Read) refers to gpio.o(i.GPIOPinWrite) for GPIOPinWrite
+    spi.o(.text.spi_Read) refers to ssi.o(i.SSIDataPutNonBlocking) for SSIDataPutNonBlocking
+    spi.o(.text.spi_Read) refers to ssi.o(i.SSIDataGetNonBlocking) for SSIDataGetNonBlocking
+    spi.o(.ARM.exidx.text.spi_Read) refers to spi.o(.text.spi_Read) for [Anonymous Symbol]
+    startup_rvmdk.o(RESET) refers to startup_rvmdk.o(STACK) for StackMem
+    startup_rvmdk.o(RESET) refers to board.o(.text.GPIOB_intHandler) for GPIOB_intHandler
+    startup_rvmdk.o(RESET) refers to uartstdio.o(.text.UARTStdioIntHandler) for UARTStdioIntHandler
+    startup_rvmdk.o(RESET) refers to entry.o(.ARM.Collect$$$$00000000) for __main
+    wlan.o(.text.sl_WlanConnect) refers to memseta.o(.text) for __aeabi_memclr4
+    wlan.o(.text.sl_WlanConnect) refers to memmovea.o(.text) for __aeabi_memcpy
+    wlan.o(.text.sl_WlanConnect) refers to driver.o(.text._SlDrvCmdOp) for _SlDrvCmdOp
+    wlan.o(.ARM.exidx.text.sl_WlanConnect) refers to wlan.o(.text.sl_WlanConnect) for [Anonymous Symbol]
+    wlan.o(.text.sl_WlanDisconnect) refers to driver.o(.text._SlDrvBasicCmd) for _SlDrvBasicCmd
+    wlan.o(.ARM.exidx.text.sl_WlanDisconnect) refers to wlan.o(.text.sl_WlanDisconnect) for [Anonymous Symbol]
+    wlan.o(.text.sl_WlanPolicySet) refers to wlan.o(.rodata._SlPolicySetCmdCtrl) for _SlPolicySetCmdCtrl
+    wlan.o(.text.sl_WlanPolicySet) refers to driver.o(.text._SlDrvCmdOp) for _SlDrvCmdOp
+    wlan.o(.ARM.exidx.text.sl_WlanPolicySet) refers to wlan.o(.text.sl_WlanPolicySet) for [Anonymous Symbol]
+    wlan.o(.text.sl_WlanPolicyGet) refers to wlan.o(.rodata._SlPolicyGetCmdCtrl) for _SlPolicyGetCmdCtrl
+    wlan.o(.text.sl_WlanPolicyGet) refers to driver.o(.text._SlDrvCmdOp) for _SlDrvCmdOp
+    wlan.o(.ARM.exidx.text.sl_WlanPolicyGet) refers to wlan.o(.text.sl_WlanPolicyGet) for [Anonymous Symbol]
+    wlan.o(.text.sl_WlanProfileAdd) refers to memmovea.o(.text) for __aeabi_memcpy
+    wlan.o(.text.sl_WlanProfileAdd) refers to driver.o(.text._SlDrvCmdOp) for _SlDrvCmdOp
+    wlan.o(.ARM.exidx.text.sl_WlanProfileAdd) refers to wlan.o(.text.sl_WlanProfileAdd) for [Anonymous Symbol]
+    wlan.o(.text.sl_WlanProfileGet) refers to wlan.o(.rodata._SlProfileGetCmdCtrl) for _SlProfileGetCmdCtrl
+    wlan.o(.text.sl_WlanProfileGet) refers to driver.o(.text._SlDrvCmdOp) for _SlDrvCmdOp
+    wlan.o(.text.sl_WlanProfileGet) refers to memmovea.o(.text) for __aeabi_memcpy
+    wlan.o(.ARM.exidx.text.sl_WlanProfileGet) refers to wlan.o(.text.sl_WlanProfileGet) for [Anonymous Symbol]
+    wlan.o(.text.sl_WlanProfileDel) refers to wlan.o(.rodata._SlProfileDelCmdCtrl) for _SlProfileDelCmdCtrl
+    wlan.o(.text.sl_WlanProfileDel) refers to driver.o(.text._SlDrvCmdOp) for _SlDrvCmdOp
+    wlan.o(.ARM.exidx.text.sl_WlanProfileDel) refers to wlan.o(.text.sl_WlanProfileDel) for [Anonymous Symbol]
+    wlan.o(.text.sl_WlanGetNetworkList) refers to wlan.o(.rodata._SlWlanGetNetworkListCtrl) for _SlWlanGetNetworkListCtrl
+    wlan.o(.text.sl_WlanGetNetworkList) refers to driver.o(.text._SlDrvCmdOp) for _SlDrvCmdOp
+    wlan.o(.ARM.exidx.text.sl_WlanGetNetworkList) refers to wlan.o(.text.sl_WlanGetNetworkList) for [Anonymous Symbol]
+    wlan.o(.text.sl_WlanRxFilterAdd) refers to wlan.o(.rodata._SlRxFilterAddtCmdCtrl) for _SlRxFilterAddtCmdCtrl
+    wlan.o(.text.sl_WlanRxFilterAdd) refers to driver.o(.text._SlDrvCmdOp) for _SlDrvCmdOp
+    wlan.o(.ARM.exidx.text.sl_WlanRxFilterAdd) refers to wlan.o(.text.sl_WlanRxFilterAdd) for [Anonymous Symbol]
+    wlan.o(.text.sl_WlanRxFilterSet) refers to wlan.o(.rodata._SlRxFilterSetCmdCtrl) for _SlRxFilterSetCmdCtrl
+    wlan.o(.text.sl_WlanRxFilterSet) refers to driver.o(.text._SlDrvCmdOp) for _SlDrvCmdOp
+    wlan.o(.ARM.exidx.text.sl_WlanRxFilterSet) refers to wlan.o(.text.sl_WlanRxFilterSet) for [Anonymous Symbol]
+    wlan.o(.text.sl_WlanRxFilterGet) refers to wlan.o(.rodata._SlRxFilterGetCmdCtrl) for _SlRxFilterGetCmdCtrl
+    wlan.o(.text.sl_WlanRxFilterGet) refers to driver.o(.text._SlDrvCmdOp) for _SlDrvCmdOp
+    wlan.o(.ARM.exidx.text.sl_WlanRxFilterGet) refers to wlan.o(.text.sl_WlanRxFilterGet) for [Anonymous Symbol]
+    wlan.o(.text.sl_WlanRxStatStart) refers to driver.o(.text._SlDrvBasicCmd) for _SlDrvBasicCmd
+    wlan.o(.ARM.exidx.text.sl_WlanRxStatStart) refers to wlan.o(.text.sl_WlanRxStatStart) for [Anonymous Symbol]
+    wlan.o(.text.sl_WlanRxStatStop) refers to driver.o(.text._SlDrvBasicCmd) for _SlDrvBasicCmd
+    wlan.o(.ARM.exidx.text.sl_WlanRxStatStop) refers to wlan.o(.text.sl_WlanRxStatStop) for [Anonymous Symbol]
+    wlan.o(.text.sl_WlanRxStatGet) refers to memseta.o(.text) for __aeabi_memclr4
+    wlan.o(.text.sl_WlanRxStatGet) refers to driver.o(.text._SlDrvCmdOp) for _SlDrvCmdOp
+    wlan.o(.ARM.exidx.text.sl_WlanRxStatGet) refers to wlan.o(.text.sl_WlanRxStatGet) for [Anonymous Symbol]
+    wlan.o(.text.sl_WlanSmartConfigStop) refers to driver.o(.text._SlDrvBasicCmd) for _SlDrvBasicCmd
+    wlan.o(.ARM.exidx.text.sl_WlanSmartConfigStop) refers to wlan.o(.text.sl_WlanSmartConfigStop) for [Anonymous Symbol]
+    wlan.o(.text.sl_WlanSmartConfigStart) refers to memmovea.o(.text) for __aeabi_memcpy
+    wlan.o(.text.sl_WlanSmartConfigStart) refers to wlan.o(.rodata._SlSmartConfigStartCmdCtrl) for _SlSmartConfigStartCmdCtrl
+    wlan.o(.text.sl_WlanSmartConfigStart) refers to driver.o(.text._SlDrvCmdOp) for _SlDrvCmdOp
+    wlan.o(.ARM.exidx.text.sl_WlanSmartConfigStart) refers to wlan.o(.text.sl_WlanSmartConfigStart) for [Anonymous Symbol]
+    wlan.o(.text.sl_WlanSetMode) refers to wlan.o(.rodata._SlWlanSetModeCmdCtrl) for _SlWlanSetModeCmdCtrl
+    wlan.o(.text.sl_WlanSetMode) refers to driver.o(.text._SlDrvCmdOp) for _SlDrvCmdOp
+    wlan.o(.ARM.exidx.text.sl_WlanSetMode) refers to wlan.o(.text.sl_WlanSetMode) for [Anonymous Symbol]
+    wlan.o(.text.sl_WlanSet) refers to wlan.o(.rodata._SlWlanCfgSetCmdCtrl) for _SlWlanCfgSetCmdCtrl
+    wlan.o(.text.sl_WlanSet) refers to driver.o(.text._SlDrvCmdOp) for _SlDrvCmdOp
+    wlan.o(.ARM.exidx.text.sl_WlanSet) refers to wlan.o(.text.sl_WlanSet) for [Anonymous Symbol]
+    wlan.o(.text.sl_WlanGet) refers to wlan.o(.rodata._SlWlanCfgGetCmdCtrl) for _SlWlanCfgGetCmdCtrl
+    wlan.o(.text.sl_WlanGet) refers to driver.o(.text._SlDrvCmdOp) for _SlDrvCmdOp
+    wlan.o(.ARM.exidx.text.sl_WlanGet) refers to wlan.o(.text.sl_WlanGet) for [Anonymous Symbol]
+    uartstdio.o(.text.UARTStdioConfig) refers to uartstdio.o(.bss.g_ui32Base) for g_ui32Base
+    uartstdio.o(.text.UARTStdioConfig) refers to uartstdio.o(.bss.g_ui32UARTRxReadIndex) for g_ui32UARTRxReadIndex
+    uartstdio.o(.text.UARTStdioConfig) refers to uartstdio.o(.bss.g_ui32UARTRxWriteIndex) for g_ui32UARTRxWriteIndex
+    uartstdio.o(.text.UARTStdioConfig) refers to uartstdio.o(.bss.g_ui32UARTTxReadIndex) for g_ui32UARTTxReadIndex
+    uartstdio.o(.text.UARTStdioConfig) refers to uartstdio.o(.bss.g_ui32UARTTxWriteIndex) for g_ui32UARTTxWriteIndex
+    uartstdio.o(.text.UARTStdioConfig) refers to uartstdio.o(.bss.g_ui32PortNum) for g_ui32PortNum
+    uartstdio.o(.text.UARTStdioConfig) refers to uartstdio.o(.rodata.g_ui32UARTInt) for g_ui32UARTInt
+    uartstdio.o(.ARM.exidx.text.UARTStdioConfig) refers to uartstdio.o(.text.UARTStdioConfig) for [Anonymous Symbol]
+    uartstdio.o(.text.UARTFlushRx) refers to uartstdio.o(.bss.g_ui32UARTRxReadIndex) for g_ui32UARTRxReadIndex
+    uartstdio.o(.text.UARTFlushRx) refers to uartstdio.o(.bss.g_ui32UARTRxWriteIndex) for g_ui32UARTRxWriteIndex
+    uartstdio.o(.ARM.exidx.text.UARTFlushRx) refers to uartstdio.o(.text.UARTFlushRx) for [Anonymous Symbol]
+    uartstdio.o(.text.UARTFlushTx) refers to uartstdio.o(.bss.g_ui32UARTTxReadIndex) for g_ui32UARTTxReadIndex
+    uartstdio.o(.text.UARTFlushTx) refers to uartstdio.o(.bss.g_ui32UARTTxWriteIndex) for g_ui32UARTTxWriteIndex
+    uartstdio.o(.ARM.exidx.text.UARTFlushTx) refers to uartstdio.o(.text.UARTFlushTx) for [Anonymous Symbol]
+    uartstdio.o(.text.UARTwrite) refers to uartstdio.o(.bss.g_ui32UARTTxWriteIndex) for g_ui32UARTTxWriteIndex
+    uartstdio.o(.text.UARTwrite) refers to uartstdio.o(.bss.g_ui32UARTTxReadIndex) for g_ui32UARTTxReadIndex
+    uartstdio.o(.text.UARTwrite) refers to uartstdio.o(.bss.g_pcUARTTxBuffer) for g_pcUARTTxBuffer
+    uartstdio.o(.text.UARTwrite) refers to uartstdio.o(.bss.g_ui32Base) for g_ui32Base
+    uartstdio.o(.text.UARTwrite) refers to uartstdio.o(.text.UARTPrimeTransmit) for UARTPrimeTransmit
+    uartstdio.o(.ARM.exidx.text.UARTwrite) refers to uartstdio.o(.text.UARTwrite) for [Anonymous Symbol]
+    uartstdio.o(.text.UARTPrimeTransmit) refers to uartstdio.o(.bss.g_ui32UARTTxWriteIndex) for g_ui32UARTTxWriteIndex
+    uartstdio.o(.text.UARTPrimeTransmit) refers to uartstdio.o(.bss.g_ui32UARTTxReadIndex) for g_ui32UARTTxReadIndex
+    uartstdio.o(.text.UARTPrimeTransmit) refers to uartstdio.o(.bss.g_ui32PortNum) for g_ui32PortNum
+    uartstdio.o(.text.UARTPrimeTransmit) refers to uartstdio.o(.rodata.g_ui32UARTInt) for g_ui32UARTInt
+    uartstdio.o(.text.UARTPrimeTransmit) refers to uartstdio.o(.bss.g_pcUARTTxBuffer) for g_pcUARTTxBuffer
+    uartstdio.o(.ARM.exidx.text.UARTPrimeTransmit) refers to uartstdio.o(.text.UARTPrimeTransmit) for [Anonymous Symbol]
+    uartstdio.o(.text.UARTOutString) refers to uartstdio.o(.bss.g_ui32Base) for g_ui32Base
+    uartstdio.o(.ARM.exidx.text.UARTOutString) refers to uartstdio.o(.text.UARTOutString) for [Anonymous Symbol]
+    uartstdio.o(.text.UARTgets) refers to uartstdio.o(.bss.g_ui32UARTRxWriteIndex) for g_ui32UARTRxWriteIndex
+    uartstdio.o(.text.UARTgets) refers to uartstdio.o(.bss.g_ui32UARTRxReadIndex) for g_ui32UARTRxReadIndex
+    uartstdio.o(.text.UARTgets) refers to uartstdio.o(.bss.g_pcUARTRxBuffer) for g_pcUARTRxBuffer
+    uartstdio.o(.ARM.exidx.text.UARTgets) refers to uartstdio.o(.text.UARTgets) for [Anonymous Symbol]
+    uartstdio.o(.text.UARTgetc) refers to uartstdio.o(.bss.g_ui32UARTRxWriteIndex) for g_ui32UARTRxWriteIndex
+    uartstdio.o(.text.UARTgetc) refers to uartstdio.o(.bss.g_ui32UARTRxReadIndex) for g_ui32UARTRxReadIndex
+    uartstdio.o(.text.UARTgetc) refers to uartstdio.o(.bss.g_pcUARTRxBuffer) for g_pcUARTRxBuffer
+    uartstdio.o(.ARM.exidx.text.UARTgetc) refers to uartstdio.o(.text.UARTgetc) for [Anonymous Symbol]
+    uartstdio.o(.text.UARTvprintf) refers to uartstdio.o(.text.UARTwrite) for UARTwrite
+    uartstdio.o(.text.UARTvprintf) refers to memseta.o(.text) for __aeabi_memset
+    uartstdio.o(.ARM.exidx.text.UARTvprintf) refers to uartstdio.o(.text.UARTvprintf) for [Anonymous Symbol]
+    uartstdio.o(.text.UARTprintf) refers to uartstdio.o(.text.UARTvprintf) for UARTvprintf
+    uartstdio.o(.ARM.exidx.text.UARTprintf) refers to uartstdio.o(.text.UARTprintf) for [Anonymous Symbol]
+    uartstdio.o(.text.UARTRxBytesAvail) refers to uartstdio.o(.bss.g_ui32UARTRxWriteIndex) for g_ui32UARTRxWriteIndex
+    uartstdio.o(.text.UARTRxBytesAvail) refers to uartstdio.o(.bss.g_ui32UARTRxReadIndex) for g_ui32UARTRxReadIndex
+    uartstdio.o(.ARM.exidx.text.UARTRxBytesAvail) refers to uartstdio.o(.text.UARTRxBytesAvail) for [Anonymous Symbol]
+    uartstdio.o(.text.UARTTxBytesFree) refers to uartstdio.o(.bss.g_ui32UARTTxWriteIndex) for g_ui32UARTTxWriteIndex
+    uartstdio.o(.text.UARTTxBytesFree) refers to uartstdio.o(.bss.g_ui32UARTTxReadIndex) for g_ui32UARTTxReadIndex
+    uartstdio.o(.ARM.exidx.text.UARTTxBytesFree) refers to uartstdio.o(.text.UARTTxBytesFree) for [Anonymous Symbol]
+    uartstdio.o(.text.UARTPeek) refers to uartstdio.o(.bss.g_ui32UARTRxWriteIndex) for g_ui32UARTRxWriteIndex
+    uartstdio.o(.text.UARTPeek) refers to uartstdio.o(.bss.g_ui32UARTRxReadIndex) for g_ui32UARTRxReadIndex
+    uartstdio.o(.text.UARTPeek) refers to uartstdio.o(.bss.g_pcUARTRxBuffer) for g_pcUARTRxBuffer
+    uartstdio.o(.ARM.exidx.text.UARTPeek) refers to uartstdio.o(.text.UARTPeek) for [Anonymous Symbol]
+    uartstdio.o(.text.UARTEchoSet) refers to uartstdio.o(.bss.g_bDisableEcho) for g_bDisableEcho
+    uartstdio.o(.ARM.exidx.text.UARTEchoSet) refers to uartstdio.o(.text.UARTEchoSet) for [Anonymous Symbol]
+    uartstdio.o(.text.UARTStdioIntHandler) refers to uartstdio.o(.bss.g_ui32Base) for g_ui32Base
+    uartstdio.o(.text.UARTStdioIntHandler) refers to uartstdio.o(.text.UARTPrimeTransmit) for UARTPrimeTransmit
+    uartstdio.o(.text.UARTStdioIntHandler) refers to uartstdio.o(.bss.g_ui32UARTTxWriteIndex) for g_ui32UARTTxWriteIndex
+    uartstdio.o(.text.UARTStdioIntHandler) refers to uartstdio.o(.bss.g_ui32UARTTxReadIndex) for g_ui32UARTTxReadIndex
+    uartstdio.o(.text.UARTStdioIntHandler) refers to uartstdio.o(.bss.g_bDisableEcho) for g_bDisableEcho
+    uartstdio.o(.text.UARTStdioIntHandler) refers to uartstdio.o(.bss.UARTStdioIntHandler.bLastWasCR) for UARTStdioIntHandler.bLastWasCR
+    uartstdio.o(.text.UARTStdioIntHandler) refers to uartstdio.o(.bss.g_ui32UARTRxWriteIndex) for g_ui32UARTRxWriteIndex
+    uartstdio.o(.text.UARTStdioIntHandler) refers to uartstdio.o(.bss.g_ui32UARTRxReadIndex) for g_ui32UARTRxReadIndex
+    uartstdio.o(.text.UARTStdioIntHandler) refers to uartstdio.o(.bss.g_pcUARTRxBuffer) for g_pcUARTRxBuffer
+    uartstdio.o(.text.UARTStdioIntHandler) refers to uartstdio.o(.text.UARTwrite) for UARTwrite
+    uartstdio.o(.ARM.exidx.text.UARTStdioIntHandler) refers to uartstdio.o(.text.UARTStdioIntHandler) for [Anonymous Symbol]
+    ustdlib.o(.text.ustrncpy) refers to memseta.o(.text) for __aeabi_memclr
+    ustdlib.o(.ARM.exidx.text.ustrncpy) refers to ustdlib.o(.text.ustrncpy) for [Anonymous Symbol]
+    ustdlib.o(.text.uvsnprintf) refers to memseta.o(.text) for __aeabi_memclr
+    ustdlib.o(.text.uvsnprintf) refers to ustdlib.o(.rodata.str1.1) for .L.str.1
+    ustdlib.o(.ARM.exidx.text.uvsnprintf) refers to ustdlib.o(.text.uvsnprintf) for [Anonymous Symbol]
+    ustdlib.o(.text.usprintf) refers to ustdlib.o(.text.uvsnprintf) for uvsnprintf
+    ustdlib.o(.ARM.exidx.text.usprintf) refers to ustdlib.o(.text.usprintf) for [Anonymous Symbol]
+    ustdlib.o(.text.usnprintf) refers to ustdlib.o(.text.uvsnprintf) for uvsnprintf
+    ustdlib.o(.ARM.exidx.text.usnprintf) refers to ustdlib.o(.text.usnprintf) for [Anonymous Symbol]
+    ustdlib.o(.text.ulocaltime) refers to ustdlib.o(.rodata.g_psDaysToMonth) for g_psDaysToMonth
+    ustdlib.o(.ARM.exidx.text.ulocaltime) refers to ustdlib.o(.text.ulocaltime) for [Anonymous Symbol]
+    ustdlib.o(.text.umktime) refers to ustdlib.o(.text.ucmptime) for ucmptime
+    ustdlib.o(.text.umktime) refers to ustdlib.o(.text.ulocaltime) for ulocaltime
+    ustdlib.o(.ARM.exidx.text.umktime) refers to ustdlib.o(.text.umktime) for [Anonymous Symbol]
+    ustdlib.o(.ARM.exidx.text.ucmptime) refers to ustdlib.o(.text.ucmptime) for [Anonymous Symbol]
+    ustdlib.o(.ARM.exidx.text.ustrtoul) refers to ustdlib.o(.text.ustrtoul) for [Anonymous Symbol]
+    ustdlib.o(.ARM.exidx.text.ustrtof) refers to ustdlib.o(.text.ustrtof) for [Anonymous Symbol]
+    ustdlib.o(.ARM.exidx.text.ustrlen) refers to ustdlib.o(.text.ustrlen) for [Anonymous Symbol]
+    ustdlib.o(.ARM.exidx.text.ustrstr) refers to ustdlib.o(.text.ustrstr) for [Anonymous Symbol]
+    ustdlib.o(.ARM.exidx.text.ustrncmp) refers to ustdlib.o(.text.ustrncmp) for [Anonymous Symbol]
+    ustdlib.o(.ARM.exidx.text.ustrncasecmp) refers to ustdlib.o(.text.ustrncasecmp) for [Anonymous Symbol]
+    ustdlib.o(.text.ustrcasecmp) refers to ustdlib.o(.text.ustrncasecmp) for ustrncasecmp
+    ustdlib.o(.ARM.exidx.text.ustrcasecmp) refers to ustdlib.o(.text.ustrcasecmp) for [Anonymous Symbol]
+    ustdlib.o(.ARM.exidx.text.ustrcmp) refers to ustdlib.o(.text.ustrcmp) for [Anonymous Symbol]
+    ustdlib.o(.text.usrand) refers to ustdlib.o(.data.g_iRandomSeed) for g_iRandomSeed
+    ustdlib.o(.ARM.exidx.text.usrand) refers to ustdlib.o(.text.usrand) for [Anonymous Symbol]
+    ustdlib.o(.text.urand) refers to ustdlib.o(.data.g_iRandomSeed) for g_iRandomSeed
+    ustdlib.o(.ARM.exidx.text.urand) refers to ustdlib.o(.text.urand) for [Anonymous Symbol]
+    mainnokia5110.o(.text.LCD_OutString) refers to st7735.o(.text.ST7735_OutString) for ST7735_OutString
+    mainnokia5110.o(.ARM.exidx.text.LCD_OutString) refers to mainnokia5110.o(.text.LCD_OutString) for [Anonymous Symbol]
+    mainnokia5110.o(.text.LCD_Init) refers to st7735.o(.text.ST7735_InitR) for ST7735_InitR
+    mainnokia5110.o(.text.LCD_Init) refers to sysctl.o(i.SysCtlPeripheralEnable) for SysCtlPeripheralEnable
+    mainnokia5110.o(.text.LCD_Init) refers to gpio.o(i.GPIOPinConfigure) for GPIOPinConfigure
+    mainnokia5110.o(.text.LCD_Init) refers to gpio.o(i.GPIOPinTypeUART) for GPIOPinTypeUART
+    mainnokia5110.o(.text.LCD_Init) refers to uartstdio.o(.text.UARTStdioConfig) for UARTStdioConfig
+    mainnokia5110.o(.text.LCD_Init) refers to st7735.o(.text.ST7735_FillScreen) for ST7735_FillScreen
+    mainnokia5110.o(.ARM.exidx.text.LCD_Init) refers to mainnokia5110.o(.text.LCD_Init) for [Anonymous Symbol]
+    mainnokia5110.o(.text.UARToutString) refers to uartstdio.o(.text.UARTprintf) for UARTprintf
+    mainnokia5110.o(.ARM.exidx.text.UARToutString) refers to mainnokia5110.o(.text.UARToutString) for [Anonymous Symbol]
+    mainnokia5110.o(.ARM.exidx.text.UART0_OutChar) refers to mainnokia5110.o(.text.UART0_OutChar) for [Anonymous Symbol]
+    mainnokia5110.o(.ARM.exidx.text.UART0_In) refers to mainnokia5110.o(.text.UART0_In) for [Anonymous Symbol]
+    mainnokia5110.o(.ARM.exidx.text.UART0_InString) refers to mainnokia5110.o(.text.UART0_InString) for [Anonymous Symbol]
+    mainnokia5110.o(.text.SimpleLinkWlanEventHandler) refers to mainnokia5110.o(.bss.g_Status) for g_Status
+    mainnokia5110.o(.ARM.exidx.text.SimpleLinkWlanEventHandler) refers to mainnokia5110.o(.text.SimpleLinkWlanEventHandler) for [Anonymous Symbol]
+    mainnokia5110.o(.text.SimpleLinkNetAppEventHandler) refers to mainnokia5110.o(.bss.g_Status) for g_Status
+    mainnokia5110.o(.ARM.exidx.text.SimpleLinkNetAppEventHandler) refers to mainnokia5110.o(.text.SimpleLinkNetAppEventHandler) for [Anonymous Symbol]
+    mainnokia5110.o(.ARM.exidx.text.SimpleLinkHttpServerCallback) refers to mainnokia5110.o(.text.SimpleLinkHttpServerCallback) for [Anonymous Symbol]
+    mainnokia5110.o(.ARM.exidx.text.SimpleLinkGeneralEventHandler) refers to mainnokia5110.o(.text.SimpleLinkGeneralEventHandler) for [Anonymous Symbol]
+    mainnokia5110.o(.ARM.exidx.text.SimpleLinkSockEventHandler) refers to mainnokia5110.o(.text.SimpleLinkSockEventHandler) for [Anonymous Symbol]
+    mainnokia5110.o(.text.Crash) refers to led.o(.text.LED_RedToggle) for LED_RedToggle
+    mainnokia5110.o(.ARM.exidx.text.Crash) refers to mainnokia5110.o(.text.Crash) for [Anonymous Symbol]
+    mainnokia5110.o(.text.main) refers to mainnokia5110.o(.rodata.str1.4) for .L__const.main.appid
+    mainnokia5110.o(.text.main) refers to memmovea.o(.text) for __aeabi_memcpy4
+    mainnokia5110.o(.text.main) refers to mainnokia5110.o(.bss.g_Status) for g_Status
+    mainnokia5110.o(.text.main) refers to mainnokia5110.o(.bss.appData) for appData
+    mainnokia5110.o(.text.main) refers to memseta.o(.text) for __aeabi_memclr4
+    mainnokia5110.o(.text.main) refers to board.o(.text.stopWDT) for stopWDT
+    mainnokia5110.o(.text.main) refers to board.o(.text.initClk) for initClk
+    mainnokia5110.o(.text.main) refers to mainnokia5110.o(.text.LCD_Init) for LCD_Init
+    mainnokia5110.o(.text.main) refers to led.o(.text.LED_Init) for LED_Init
+    mainnokia5110.o(.text.main) refers to device.o(.text.sl_Start) for sl_Start
+    mainnokia5110.o(.text.main) refers to wlan.o(.text.sl_WlanSetMode) for sl_WlanSetMode
+    mainnokia5110.o(.text.main) refers to device.o(.text.sl_Stop) for sl_Stop
+    mainnokia5110.o(.text.main) refers to st7735.o(.text.ST7735_OutString) for ST7735_OutString
+    mainnokia5110.o(.text.main) refers to led.o(.text.LED_RedToggle) for LED_RedToggle
+    mainnokia5110.o(.text.main) refers to device.o(.text.sl_DevGet) for sl_DevGet
+    mainnokia5110.o(.text.main) refers to wlan.o(.text.sl_WlanPolicySet) for sl_WlanPolicySet
+    mainnokia5110.o(.text.main) refers to wlan.o(.text.sl_WlanProfileDel) for sl_WlanProfileDel
+    mainnokia5110.o(.text.main) refers to wlan.o(.text.sl_WlanDisconnect) for sl_WlanDisconnect
+    mainnokia5110.o(.text.main) refers to netcfg.o(.text.sl_NetCfgSet) for sl_NetCfgSet
+    mainnokia5110.o(.text.main) refers to wlan.o(.text.sl_WlanSet) for sl_WlanSet
+    mainnokia5110.o(.text.main) refers to netapp.o(.text.sl_NetAppMDNSUnRegisterService) for sl_NetAppMDNSUnRegisterService
+    mainnokia5110.o(.text.main) refers to mainnokia5110.o(.text.WlanConnect) for WlanConnect
+    mainnokia5110.o(.text.main) refers to mainnokia5110.o(.rodata.str1.1) for .L.str.2
+    mainnokia5110.o(.text.main) refers to mainnokia5110.o(.text.UARToutString) for UARToutString
+    mainnokia5110.o(.text.main) refers to mainnokia5110.o(.text.UART0_InString) for UART0_InString
+    mainnokia5110.o(.text.main) refers to strcmp.o(.text) for strcmp
+    mainnokia5110.o(.text.main) refers to mainnokia5110.o(.bss.request) for request
+    mainnokia5110.o(.text.main) refers to strcat.o(.text) for strcat
+    mainnokia5110.o(.text.main) refers to mainnokia5110.o(.bss.Humidity) for Humidity
+    mainnokia5110.o(.text.main) refers to mainnokia5110.o(.bss.Weather) for Weather
+    mainnokia5110.o(.text.main) refers to strlen.o(.text) for strlen
+    mainnokia5110.o(.text.main) refers to netapp.o(.text.sl_NetAppDnsGetHostByName) for sl_NetAppDnsGetHostByName
+    mainnokia5110.o(.text.main) refers to socket.o(.text.sl_Htons) for sl_Htons
+    mainnokia5110.o(.text.main) refers to socket.o(.text.sl_Htonl) for sl_Htonl
+    mainnokia5110.o(.text.main) refers to socket.o(.text.sl_Socket) for sl_Socket
+    mainnokia5110.o(.text.main) refers to socket.o(.text.sl_Connect) for sl_Connect
+    mainnokia5110.o(.text.main) refers to strcpy.o(.text) for strcpy
+    mainnokia5110.o(.text.main) refers to socket.o(.text.sl_Send) for sl_Send
+    mainnokia5110.o(.text.main) refers to socket.o(.text.sl_Recv) for sl_Recv
+    mainnokia5110.o(.text.main) refers to strstr.o(.text) for strstr
+    mainnokia5110.o(.text.main) refers to mainnokia5110.o(.bss.City) for City
+    mainnokia5110.o(.text.main) refers to mainnokia5110.o(.bss.TempMin) for TempMin
+    mainnokia5110.o(.text.main) refers to mainnokia5110.o(.bss.Temperature) for Temperature
+    mainnokia5110.o(.text.main) refers to mainnokia5110.o(.bss.TempMax) for TempMax
+    mainnokia5110.o(.text.main) refers to socket.o(.text.sl_Close) for sl_Close
+    mainnokia5110.o(.text.main) refers to led.o(.text.LED_GreenOn) for LED_GreenOn
+    mainnokia5110.o(.text.main) refers to uartstdio.o(.text.UARTprintf) for UARTprintf
+    mainnokia5110.o(.text.main) refers to st7735.o(.text.ST7735_DrawString) for ST7735_DrawString
+    mainnokia5110.o(.text.main) refers to led.o(.text.Board_Input) for Board_Input
+    mainnokia5110.o(.text.main) refers to memcmp.o(.text) for memcmp
+    mainnokia5110.o(.text.main) refers to st7735.o(.text.ST7735_DrawPixel) for ST7735_DrawPixel
+    mainnokia5110.o(.text.main) refers to st7735.o(.text.ST7735_FillCircle) for ST7735_FillCircle
+    mainnokia5110.o(.text.main) refers to st7735.o(.text.ST7735_FillRect) for ST7735_FillRect
+    mainnokia5110.o(.text.main) refers to led.o(.text.LED_GreenOff) for LED_GreenOff
+    mainnokia5110.o(.ARM.exidx.text.main) refers to mainnokia5110.o(.text.main) for [Anonymous Symbol]
+    mainnokia5110.o(.text.WlanConnect) refers to wlan.o(.text.sl_WlanConnect) for sl_WlanConnect
+    mainnokia5110.o(.text.WlanConnect) refers to mainnokia5110.o(.bss.g_Status) for g_Status
+    mainnokia5110.o(.text.WlanConnect) refers to nonos.o(.text._SlNonOsMainLoopTask) for _SlNonOsMainLoopTask
+    mainnokia5110.o(.ARM.exidx.text.WlanConnect) refers to mainnokia5110.o(.text.WlanConnect) for [Anonymous Symbol]
+    mainnokia5110.o(.ARM.exidx.text.Systick_Wait) refers to mainnokia5110.o(.text.Systick_Wait) for [Anonymous Symbol]
+    st7735.o(.ARM.exidx.text.Delay1ms) refers to st7735.o(.text.Delay1ms) for [Anonymous Symbol]
+    st7735.o(.text.ST7735_InitB) refers to st7735.o(.rodata.Bcmd) for Bcmd
+    st7735.o(.text.ST7735_InitB) refers to st7735.o(.text.commonInit) for commonInit
+    st7735.o(.text.ST7735_InitB) refers to st7735.o(.data.StTextColor) for StTextColor
+    st7735.o(.text.ST7735_InitB) refers to st7735.o(.bss._width) for _width
+    st7735.o(.text.ST7735_InitB) refers to st7735.o(.bss.StX) for StX
+    st7735.o(.text.ST7735_InitB) refers to st7735.o(.bss._height) for _height
+    st7735.o(.text.ST7735_InitB) refers to st7735.o(.bss.StY) for StY
+    st7735.o(.text.ST7735_InitB) refers to st7735.o(.text.ST7735_FillRect) for ST7735_FillRect
+    st7735.o(.ARM.exidx.text.ST7735_InitB) refers to st7735.o(.text.ST7735_InitB) for [Anonymous Symbol]
+    st7735.o(.text.commonInit) refers to st7735.o(.bss.RowStart) for RowStart
+    st7735.o(.text.commonInit) refers to st7735.o(.bss.ColStart) for ColStart
+    st7735.o(.text.commonInit) refers to st7735.o(.text.commandList) for commandList
+    st7735.o(.ARM.exidx.text.commonInit) refers to st7735.o(.text.commonInit) for [Anonymous Symbol]
+    st7735.o(.text.ST7735_SetCursor) refers to st7735.o(.bss.StX) for StX
+    st7735.o(.text.ST7735_SetCursor) refers to st7735.o(.bss.StY) for StY
+    st7735.o(.ARM.exidx.text.ST7735_SetCursor) refers to st7735.o(.text.ST7735_SetCursor) for [Anonymous Symbol]
+    st7735.o(.text.ST7735_FillScreen) refers to st7735.o(.bss._width) for _width
+    st7735.o(.text.ST7735_FillScreen) refers to st7735.o(.bss._height) for _height
+    st7735.o(.text.ST7735_FillScreen) refers to st7735.o(.text.ST7735_FillRect) for ST7735_FillRect
+    st7735.o(.ARM.exidx.text.ST7735_FillScreen) refers to st7735.o(.text.ST7735_FillScreen) for [Anonymous Symbol]
+    st7735.o(.text.ST7735_InitR) refers to st7735.o(.rodata.Rcmd1) for Rcmd1
+    st7735.o(.text.ST7735_InitR) refers to st7735.o(.text.commonInit) for commonInit
+    st7735.o(.text.ST7735_InitR) refers to st7735.o(.rodata.Rcmd2green) for Rcmd2green
+    st7735.o(.text.ST7735_InitR) refers to st7735.o(.text.commandList) for commandList
+    st7735.o(.text.ST7735_InitR) refers to st7735.o(.bss.ColStart) for ColStart
+    st7735.o(.text.ST7735_InitR) refers to st7735.o(.bss.RowStart) for RowStart
+    st7735.o(.text.ST7735_InitR) refers to st7735.o(.rodata.Rcmd3) for Rcmd3
+    st7735.o(.text.ST7735_InitR) refers to st7735.o(.rodata.Rcmd2red) for Rcmd2red
+    st7735.o(.text.ST7735_InitR) refers to st7735.o(.data.StTextColor) for StTextColor
+    st7735.o(.text.ST7735_InitR) refers to st7735.o(.bss.TabColor) for TabColor
+    st7735.o(.text.ST7735_InitR) refers to st7735.o(.bss._width) for _width
+    st7735.o(.text.ST7735_InitR) refers to st7735.o(.bss.StX) for StX
+    st7735.o(.text.ST7735_InitR) refers to st7735.o(.bss._height) for _height
+    st7735.o(.text.ST7735_InitR) refers to st7735.o(.bss.StY) for StY
+    st7735.o(.text.ST7735_InitR) refers to st7735.o(.text.ST7735_FillRect) for ST7735_FillRect
+    st7735.o(.ARM.exidx.text.ST7735_InitR) refers to st7735.o(.text.ST7735_InitR) for [Anonymous Symbol]
+    st7735.o(.ARM.exidx.text.commandList) refers to st7735.o(.text.commandList) for [Anonymous Symbol]
+    st7735.o(.text.ST7735_DrawPixel) refers to st7735.o(.bss._width) for _width
+    st7735.o(.text.ST7735_DrawPixel) refers to st7735.o(.bss._height) for _height
+    st7735.o(.text.ST7735_DrawPixel) refers to st7735.o(.text.setAddrWindow) for setAddrWindow
+    st7735.o(.ARM.exidx.text.ST7735_DrawPixel) refers to st7735.o(.text.ST7735_DrawPixel) for [Anonymous Symbol]
+    st7735.o(.text.setAddrWindow) refers to st7735.o(.bss.ColStart) for ColStart
+    st7735.o(.text.setAddrWindow) refers to st7735.o(.bss.RowStart) for RowStart
+    st7735.o(.ARM.exidx.text.setAddrWindow) refers to st7735.o(.text.setAddrWindow) for [Anonymous Symbol]
+    st7735.o(.text.ST7735_DrawCircle) refers to st7735.o(.text.ST7735_DrawPixel) for ST7735_DrawPixel
+    st7735.o(.ARM.exidx.text.ST7735_DrawCircle) refers to st7735.o(.text.ST7735_DrawCircle) for [Anonymous Symbol]
+    st7735.o(.text.ST7735_FillCircle) refers to st7735.o(.text.ST7735_DrawFastVLine) for ST7735_DrawFastVLine
+    st7735.o(.ARM.exidx.text.ST7735_FillCircle) refers to st7735.o(.text.ST7735_FillCircle) for [Anonymous Symbol]
+    st7735.o(.text.ST7735_DrawFastVLine) refers to st7735.o(.bss._width) for _width
+    st7735.o(.text.ST7735_DrawFastVLine) refers to st7735.o(.bss._height) for _height
+    st7735.o(.text.ST7735_DrawFastVLine) refers to st7735.o(.text.setAddrWindow) for setAddrWindow
+    st7735.o(.ARM.exidx.text.ST7735_DrawFastVLine) refers to st7735.o(.text.ST7735_DrawFastVLine) for [Anonymous Symbol]
+    st7735.o(.text.ST7735_DrawLine) refers to st7735.o(.text.ST7735_DrawPixel) for ST7735_DrawPixel
+    st7735.o(.ARM.exidx.text.ST7735_DrawLine) refers to st7735.o(.text.ST7735_DrawLine) for [Anonymous Symbol]
+    st7735.o(.text.ST7735_DrawFastHLine) refers to st7735.o(.bss._width) for _width
+    st7735.o(.text.ST7735_DrawFastHLine) refers to st7735.o(.bss._height) for _height
+    st7735.o(.text.ST7735_DrawFastHLine) refers to st7735.o(.text.setAddrWindow) for setAddrWindow
+    st7735.o(.ARM.exidx.text.ST7735_DrawFastHLine) refers to st7735.o(.text.ST7735_DrawFastHLine) for [Anonymous Symbol]
+    st7735.o(.text.ST7735_FillRect) refers to st7735.o(.bss._width) for _width
+    st7735.o(.text.ST7735_FillRect) refers to st7735.o(.bss._height) for _height
+    st7735.o(.text.ST7735_FillRect) refers to st7735.o(.text.setAddrWindow) for setAddrWindow
+    st7735.o(.ARM.exidx.text.ST7735_FillRect) refers to st7735.o(.text.ST7735_FillRect) for [Anonymous Symbol]
+    st7735.o(.ARM.exidx.text.ST7735_Color565) refers to st7735.o(.text.ST7735_Color565) for [Anonymous Symbol]
+    st7735.o(.ARM.exidx.text.ST7735_SwapColor) refers to st7735.o(.text.ST7735_SwapColor) for [Anonymous Symbol]
+    st7735.o(.text.ST7735_DrawBitmap) refers to st7735.o(.bss._width) for _width
+    st7735.o(.text.ST7735_DrawBitmap) refers to st7735.o(.bss._height) for _height
+    st7735.o(.text.ST7735_DrawBitmap) refers to st7735.o(.text.setAddrWindow) for setAddrWindow
+    st7735.o(.ARM.exidx.text.ST7735_DrawBitmap) refers to st7735.o(.text.ST7735_DrawBitmap) for [Anonymous Symbol]
+    st7735.o(.text.ST7735_DrawCharS) refers to st7735.o(.bss._width) for _width
+    st7735.o(.text.ST7735_DrawCharS) refers to st7735.o(.bss._height) for _height
+    st7735.o(.text.ST7735_DrawCharS) refers to st7735.o(.rodata.Font) for Font
+    st7735.o(.text.ST7735_DrawCharS) refers to st7735.o(.text.ST7735_DrawPixel) for ST7735_DrawPixel
+    st7735.o(.text.ST7735_DrawCharS) refers to st7735.o(.text.ST7735_FillRect) for ST7735_FillRect
+    st7735.o(.ARM.exidx.text.ST7735_DrawCharS) refers to st7735.o(.text.ST7735_DrawCharS) for [Anonymous Symbol]
+    st7735.o(.text.ST7735_DrawChar) refers to st7735.o(.bss._width) for _width
+    st7735.o(.text.ST7735_DrawChar) refers to st7735.o(.bss._height) for _height
+    st7735.o(.text.ST7735_DrawChar) refers to st7735.o(.text.setAddrWindow) for setAddrWindow
+    st7735.o(.text.ST7735_DrawChar) refers to st7735.o(.rodata.Font) for Font
+    st7735.o(.ARM.exidx.text.ST7735_DrawChar) refers to st7735.o(.text.ST7735_DrawChar) for [Anonymous Symbol]
+    st7735.o(.text.ST7735_DrawString) refers to st7735.o(.text.ST7735_DrawCharS) for ST7735_DrawCharS
+    st7735.o(.ARM.exidx.text.ST7735_DrawString) refers to st7735.o(.text.ST7735_DrawString) for [Anonymous Symbol]
+    st7735.o(.text.fillmessage) refers to st7735.o(.bss.Messageindex) for Messageindex
+    st7735.o(.text.fillmessage) refers to st7735.o(.bss.Message) for Message
+    st7735.o(.ARM.exidx.text.fillmessage) refers to st7735.o(.text.fillmessage) for [Anonymous Symbol]
+    st7735.o(.text.ST7735_OutUDec) refers to st7735.o(.bss.Messageindex) for Messageindex
+    st7735.o(.text.ST7735_OutUDec) refers to st7735.o(.text.fillmessage) for fillmessage
+    st7735.o(.text.ST7735_OutUDec) refers to st7735.o(.bss.StX) for StX
+    st7735.o(.text.ST7735_OutUDec) refers to st7735.o(.bss.StY) for StY
+    st7735.o(.text.ST7735_OutUDec) refers to st7735.o(.data.StTextColor) for StTextColor
+    st7735.o(.text.ST7735_OutUDec) refers to st7735.o(.bss.Message) for Message
+    st7735.o(.text.ST7735_OutUDec) refers to st7735.o(.text.ST7735_DrawString) for ST7735_DrawString
+    st7735.o(.text.ST7735_OutUDec) refers to st7735.o(.text.ST7735_DrawCharS) for ST7735_DrawCharS
+    st7735.o(.ARM.exidx.text.ST7735_OutUDec) refers to st7735.o(.text.ST7735_OutUDec) for [Anonymous Symbol]
+    st7735.o(.text.ST7735_SetRotation) refers to st7735.o(.bss.TabColor) for TabColor
+    st7735.o(.text.ST7735_SetRotation) refers to st7735.o(.bss._width) for _width
+    st7735.o(.text.ST7735_SetRotation) refers to st7735.o(.bss._height) for _height
+    st7735.o(.ARM.exidx.text.ST7735_SetRotation) refers to st7735.o(.text.ST7735_SetRotation) for [Anonymous Symbol]
+    st7735.o(.ARM.exidx.text.ST7735_InvertDisplay) refers to st7735.o(.text.ST7735_InvertDisplay) for [Anonymous Symbol]
+    st7735.o(.text.ST7735_PlotClear) refers to st7735.o(.text.ST7735_FillRect) for ST7735_FillRect
+    st7735.o(.text.ST7735_PlotClear) refers to st7735.o(.bss.Ymax) for Ymax
+    st7735.o(.text.ST7735_PlotClear) refers to st7735.o(.bss.Ymin) for Ymin
+    st7735.o(.text.ST7735_PlotClear) refers to st7735.o(.bss.Yrange) for Yrange
+    st7735.o(.text.ST7735_PlotClear) refers to st7735.o(.bss.X) for X
+    st7735.o(.ARM.exidx.text.ST7735_PlotClear) refers to st7735.o(.text.ST7735_PlotClear) for [Anonymous Symbol]
+    st7735.o(.text.ST7735_PlotPoint) refers to st7735.o(.bss.Ymin) for Ymin
+    st7735.o(.text.ST7735_PlotPoint) refers to st7735.o(.bss.Ymax) for Ymax
+    st7735.o(.text.ST7735_PlotPoint) refers to st7735.o(.bss.Yrange) for Yrange
+    st7735.o(.text.ST7735_PlotPoint) refers to st7735.o(.bss.X) for X
+    st7735.o(.text.ST7735_PlotPoint) refers to st7735.o(.text.ST7735_DrawPixel) for ST7735_DrawPixel
+    st7735.o(.ARM.exidx.text.ST7735_PlotPoint) refers to st7735.o(.text.ST7735_PlotPoint) for [Anonymous Symbol]
+    st7735.o(.text.ST7735_PlotLine) refers to st7735.o(.bss.Ymin) for Ymin
+    st7735.o(.text.ST7735_PlotLine) refers to st7735.o(.bss.Ymax) for Ymax
+    st7735.o(.text.ST7735_PlotLine) refers to st7735.o(.bss.Yrange) for Yrange
+    st7735.o(.text.ST7735_PlotLine) refers to st7735.o(.bss.lastj) for lastj
+    st7735.o(.text.ST7735_PlotLine) refers to st7735.o(.bss.X) for X
+    st7735.o(.text.ST7735_PlotLine) refers to st7735.o(.text.ST7735_DrawPixel) for ST7735_DrawPixel
+    st7735.o(.ARM.exidx.text.ST7735_PlotLine) refers to st7735.o(.text.ST7735_PlotLine) for [Anonymous Symbol]
+    st7735.o(.text.ST7735_PlotPoints) refers to st7735.o(.bss.Ymin) for Ymin
+    st7735.o(.text.ST7735_PlotPoints) refers to st7735.o(.bss.Ymax) for Ymax
+    st7735.o(.text.ST7735_PlotPoints) refers to st7735.o(.bss.Yrange) for Yrange
+    st7735.o(.text.ST7735_PlotPoints) refers to st7735.o(.bss.X) for X
+    st7735.o(.text.ST7735_PlotPoints) refers to st7735.o(.text.ST7735_DrawPixel) for ST7735_DrawPixel
+    st7735.o(.ARM.exidx.text.ST7735_PlotPoints) refers to st7735.o(.text.ST7735_PlotPoints) for [Anonymous Symbol]
+    st7735.o(.text.ST7735_PlotBar) refers to st7735.o(.bss.Ymin) for Ymin
+    st7735.o(.text.ST7735_PlotBar) refers to st7735.o(.bss.Ymax) for Ymax
+    st7735.o(.text.ST7735_PlotBar) refers to st7735.o(.bss.Yrange) for Yrange
+    st7735.o(.text.ST7735_PlotBar) refers to st7735.o(.bss.X) for X
+    st7735.o(.text.ST7735_PlotBar) refers to st7735.o(.text.ST7735_DrawFastVLine) for ST7735_DrawFastVLine
+    st7735.o(.ARM.exidx.text.ST7735_PlotBar) refers to st7735.o(.text.ST7735_PlotBar) for [Anonymous Symbol]
+    st7735.o(.text.ST7735_PlotdBfs) refers to st7735.o(.rodata.dBfs) for dBfs
+    st7735.o(.text.ST7735_PlotdBfs) refers to st7735.o(.bss.X) for X
+    st7735.o(.text.ST7735_PlotdBfs) refers to st7735.o(.text.ST7735_DrawFastVLine) for ST7735_DrawFastVLine
+    st7735.o(.ARM.exidx.text.ST7735_PlotdBfs) refers to st7735.o(.text.ST7735_PlotdBfs) for [Anonymous Symbol]
+    st7735.o(.text.ST7735_PlotNext) refers to st7735.o(.bss.X) for X
+    st7735.o(.ARM.exidx.text.ST7735_PlotNext) refers to st7735.o(.text.ST7735_PlotNext) for [Anonymous Symbol]
+    st7735.o(.text.ST7735_PlotNextErase) refers to st7735.o(.bss.X) for X
+    st7735.o(.text.ST7735_PlotNextErase) refers to st7735.o(.text.ST7735_DrawFastVLine) for ST7735_DrawFastVLine
+    st7735.o(.ARM.exidx.text.ST7735_PlotNextErase) refers to st7735.o(.text.ST7735_PlotNextErase) for [Anonymous Symbol]
+    st7735.o(.text.ST7735_OutChar) refers to st7735.o(.bss.StY) for StY
+    st7735.o(.text.ST7735_OutChar) refers to st7735.o(.bss.StX) for StX
+    st7735.o(.text.ST7735_OutChar) refers to st7735.o(.data.StTextColor) for StTextColor
+    st7735.o(.text.ST7735_OutChar) refers to st7735.o(.text.ST7735_DrawString) for ST7735_DrawString
+    st7735.o(.text.ST7735_OutChar) refers to st7735.o(.text.ST7735_DrawCharS) for ST7735_DrawCharS
+    st7735.o(.ARM.exidx.text.ST7735_OutChar) refers to st7735.o(.text.ST7735_OutChar) for [Anonymous Symbol]
+    st7735.o(.text.ST7735_OutString) refers to st7735.o(.text.ST7735_OutChar) for ST7735_OutChar
+    st7735.o(.ARM.exidx.text.ST7735_OutString) refers to st7735.o(.text.ST7735_OutString) for [Anonymous Symbol]
+    st7735.o(.text.ST7735_SetTextColor) refers to st7735.o(.data.StTextColor) for StTextColor
+    st7735.o(.ARM.exidx.text.ST7735_SetTextColor) refers to st7735.o(.text.ST7735_SetTextColor) for [Anonymous Symbol]
+    st7735.o(.text.fputc) refers to st7735.o(.text.ST7735_OutChar) for ST7735_OutChar
+    st7735.o(.ARM.exidx.text.fputc) refers to st7735.o(.text.fputc) for [Anonymous Symbol]
+    st7735.o(.ARM.exidx.text.fgetc) refers to st7735.o(.text.fgetc) for [Anonymous Symbol]
+    st7735.o(.ARM.exidx.text.ferror) refers to st7735.o(.text.ferror) for [Anonymous Symbol]
+    st7735.o(.text.Output_Init) refers to st7735.o(.text.ST7735_InitR) for ST7735_InitR
+    st7735.o(.text.Output_Init) refers to st7735.o(.bss._width) for _width
+    st7735.o(.text.Output_Init) refers to st7735.o(.bss._height) for _height
+    st7735.o(.text.Output_Init) refers to st7735.o(.text.ST7735_FillRect) for ST7735_FillRect
+    st7735.o(.ARM.exidx.text.Output_Init) refers to st7735.o(.text.Output_Init) for [Anonymous Symbol]
+    st7735.o(.text.Output_Clear) refers to st7735.o(.bss._width) for _width
+    st7735.o(.text.Output_Clear) refers to st7735.o(.bss._height) for _height
+    st7735.o(.text.Output_Clear) refers to st7735.o(.text.ST7735_FillRect) for ST7735_FillRect
+    st7735.o(.ARM.exidx.text.Output_Clear) refers to st7735.o(.text.Output_Clear) for [Anonymous Symbol]
+    st7735.o(.text.Output_Off) refers to st7735.o(.bss._width) for _width
+    st7735.o(.text.Output_Off) refers to st7735.o(.bss._height) for _height
+    st7735.o(.text.Output_Off) refers to st7735.o(.text.ST7735_FillRect) for ST7735_FillRect
+    st7735.o(.ARM.exidx.text.Output_Off) refers to st7735.o(.text.Output_Off) for [Anonymous Symbol]
+    st7735.o(.text.Output_On) refers to st7735.o(.text.Output_Init) for Output_Init
+    st7735.o(.ARM.exidx.text.Output_On) refers to st7735.o(.text.Output_On) for [Anonymous Symbol]
+    st7735.o(.text.Output_Color) refers to st7735.o(.data.StTextColor) for StTextColor
+    st7735.o(.ARM.exidx.text.Output_Color) refers to st7735.o(.text.Output_Color) for [Anonymous Symbol]
+    gpio.o(i.GPIOIntRegister) refers to interrupt.o(i.IntRegister) for IntRegister
+    gpio.o(i.GPIOIntRegister) refers to interrupt.o(i.IntEnable) for IntEnable
+    gpio.o(i.GPIOIntRegister) refers to gpio.o(.constdata) for .constdata
+    gpio.o(i.GPIOIntUnregister) refers to interrupt.o(i.IntDisable) for IntDisable
+    gpio.o(i.GPIOIntUnregister) refers to interrupt.o(i.IntUnregister) for IntUnregister
+    gpio.o(i.GPIOIntUnregister) refers to gpio.o(.constdata) for .constdata
+    gpio.o(i.GPIOPinConfigure) refers to gpio.o(.constdata) for .constdata
+    gpio.o(i.GPIOPinTypeADC) refers to gpio.o(i.GPIODirModeSet) for GPIODirModeSet
+    gpio.o(i.GPIOPinTypeADC) refers to gpio.o(i.GPIOPadConfigSet) for GPIOPadConfigSet
+    gpio.o(i.GPIOPinTypeCAN) refers to gpio.o(i.GPIODirModeSet) for GPIODirModeSet
+    gpio.o(i.GPIOPinTypeCAN) refers to gpio.o(i.GPIOPadConfigSet) for GPIOPadConfigSet
+    gpio.o(i.GPIOPinTypeCIR) refers to gpio.o(i.GPIODirModeSet) for GPIODirModeSet
+    gpio.o(i.GPIOPinTypeCIR) refers to gpio.o(i.GPIOPadConfigSet) for GPIOPadConfigSet
+    gpio.o(i.GPIOPinTypeComparator) refers to gpio.o(i.GPIODirModeSet) for GPIODirModeSet
+    gpio.o(i.GPIOPinTypeComparator) refers to gpio.o(i.GPIOPadConfigSet) for GPIOPadConfigSet
+    gpio.o(i.GPIOPinTypeEPI) refers to gpio.o(i.GPIODirModeSet) for GPIODirModeSet
+    gpio.o(i.GPIOPinTypeEPI) refers to gpio.o(i.GPIOPadConfigSet) for GPIOPadConfigSet
+    gpio.o(i.GPIOPinTypeEthernetLED) refers to gpio.o(i.GPIODirModeSet) for GPIODirModeSet
+    gpio.o(i.GPIOPinTypeEthernetLED) refers to gpio.o(i.GPIOPadConfigSet) for GPIOPadConfigSet
+    gpio.o(i.GPIOPinTypeEthernetMII) refers to gpio.o(i.GPIODirModeSet) for GPIODirModeSet
+    gpio.o(i.GPIOPinTypeEthernetMII) refers to gpio.o(i.GPIOPadConfigSet) for GPIOPadConfigSet
+    gpio.o(i.GPIOPinTypeGPIOInput) refers to gpio.o(i.GPIODirModeSet) for GPIODirModeSet
+    gpio.o(i.GPIOPinTypeGPIOInput) refers to gpio.o(i.GPIOPadConfigSet) for GPIOPadConfigSet
+    gpio.o(i.GPIOPinTypeGPIOOutput) refers to gpio.o(i.GPIOPadConfigSet) for GPIOPadConfigSet
+    gpio.o(i.GPIOPinTypeGPIOOutput) refers to gpio.o(i.GPIODirModeSet) for GPIODirModeSet
+    gpio.o(i.GPIOPinTypeGPIOOutputOD) refers to gpio.o(i.GPIOPadConfigSet) for GPIOPadConfigSet
+    gpio.o(i.GPIOPinTypeGPIOOutputOD) refers to gpio.o(i.GPIODirModeSet) for GPIODirModeSet
+    gpio.o(i.GPIOPinTypeI2C) refers to gpio.o(i.GPIODirModeSet) for GPIODirModeSet
+    gpio.o(i.GPIOPinTypeI2C) refers to gpio.o(i.GPIOPadConfigSet) for GPIOPadConfigSet
+    gpio.o(i.GPIOPinTypeI2CSCL) refers to gpio.o(i.GPIODirModeSet) for GPIODirModeSet
+    gpio.o(i.GPIOPinTypeI2CSCL) refers to gpio.o(i.GPIOPadConfigSet) for GPIOPadConfigSet
+    gpio.o(i.GPIOPinTypeKBColumn) refers to gpio.o(i.GPIODirModeSet) for GPIODirModeSet
+    gpio.o(i.GPIOPinTypeKBColumn) refers to gpio.o(i.GPIOPadConfigSet) for GPIOPadConfigSet
+    gpio.o(i.GPIOPinTypeKBRow) refers to gpio.o(i.GPIODirModeSet) for GPIODirModeSet
+    gpio.o(i.GPIOPinTypeKBRow) refers to gpio.o(i.GPIOPadConfigSet) for GPIOPadConfigSet
+    gpio.o(i.GPIOPinTypeLCD) refers to gpio.o(i.GPIODirModeSet) for GPIODirModeSet
+    gpio.o(i.GPIOPinTypeLCD) refers to gpio.o(i.GPIOPadConfigSet) for GPIOPadConfigSet
+    gpio.o(i.GPIOPinTypeLEDSeq) refers to gpio.o(i.GPIODirModeSet) for GPIODirModeSet
+    gpio.o(i.GPIOPinTypeLEDSeq) refers to gpio.o(i.GPIOPadConfigSet) for GPIOPadConfigSet
+    gpio.o(i.GPIOPinTypeLPC) refers to gpio.o(i.GPIODirModeSet) for GPIODirModeSet
+    gpio.o(i.GPIOPinTypeLPC) refers to gpio.o(i.GPIOPadConfigSet) for GPIOPadConfigSet
+    gpio.o(i.GPIOPinTypePECIRx) refers to gpio.o(i.GPIODirModeSet) for GPIODirModeSet
+    gpio.o(i.GPIOPinTypePECIRx) refers to gpio.o(i.GPIOPadConfigSet) for GPIOPadConfigSet
+    gpio.o(i.GPIOPinTypePECITx) refers to gpio.o(i.GPIODirModeSet) for GPIODirModeSet
+    gpio.o(i.GPIOPinTypePECITx) refers to gpio.o(i.GPIOPadConfigSet) for GPIOPadConfigSet
+    gpio.o(i.GPIOPinTypePWM) refers to gpio.o(i.GPIODirModeSet) for GPIODirModeSet
+    gpio.o(i.GPIOPinTypePWM) refers to gpio.o(i.GPIOPadConfigSet) for GPIOPadConfigSet
+    gpio.o(i.GPIOPinTypeQEI) refers to gpio.o(i.GPIODirModeSet) for GPIODirModeSet
+    gpio.o(i.GPIOPinTypeQEI) refers to gpio.o(i.GPIOPadConfigSet) for GPIOPadConfigSet
+    gpio.o(i.GPIOPinTypeSSI) refers to gpio.o(i.GPIODirModeSet) for GPIODirModeSet
+    gpio.o(i.GPIOPinTypeSSI) refers to gpio.o(i.GPIOPadConfigSet) for GPIOPadConfigSet
+    gpio.o(i.GPIOPinTypeTimer) refers to gpio.o(i.GPIODirModeSet) for GPIODirModeSet
+    gpio.o(i.GPIOPinTypeTimer) refers to gpio.o(i.GPIOPadConfigSet) for GPIOPadConfigSet
+    gpio.o(i.GPIOPinTypeUART) refers to gpio.o(i.GPIODirModeSet) for GPIODirModeSet
+    gpio.o(i.GPIOPinTypeUART) refers to gpio.o(i.GPIOPadConfigSet) for GPIOPadConfigSet
+    gpio.o(i.GPIOPinTypeUSBAnalog) refers to gpio.o(i.GPIODirModeSet) for GPIODirModeSet
+    gpio.o(i.GPIOPinTypeUSBAnalog) refers to gpio.o(i.GPIOPadConfigSet) for GPIOPadConfigSet
+    gpio.o(i.GPIOPinTypeUSBDigital) refers to gpio.o(i.GPIODirModeSet) for GPIODirModeSet
+    gpio.o(i.GPIOPinTypeUSBDigital) refers to gpio.o(i.GPIOPadConfigSet) for GPIOPadConfigSet
+    gpio.o(i.GPIOPinTypeWakeHigh) refers to gpio.o(i.GPIODirModeSet) for GPIODirModeSet
+    gpio.o(i.GPIOPinTypeWakeHigh) refers to gpio.o(i.GPIOPadConfigSet) for GPIOPadConfigSet
+    gpio.o(i.GPIOPinTypeWakeLow) refers to gpio.o(i.GPIODirModeSet) for GPIODirModeSet
+    gpio.o(i.GPIOPinTypeWakeLow) refers to gpio.o(i.GPIOPadConfigSet) for GPIOPadConfigSet
+    interrupt.o(i.IntDisable) refers to interrupt.o(.constdata) for .constdata
+    interrupt.o(i.IntEnable) refers to interrupt.o(.constdata) for .constdata
+    interrupt.o(i.IntIsEnabled) refers to interrupt.o(.constdata) for .constdata
+    interrupt.o(i.IntMasterDisable) refers to cpu.o(.emb_text) for CPUcpsid
+    interrupt.o(i.IntMasterEnable) refers to cpu.o(.emb_text) for CPUcpsie
+    interrupt.o(i.IntPendClear) refers to interrupt.o(.constdata) for .constdata
+    interrupt.o(i.IntPendSet) refers to interrupt.o(.constdata) for .constdata
+    interrupt.o(i.IntPriorityGet) refers to interrupt.o(.constdata) for .constdata
+    interrupt.o(i.IntPriorityGroupingGet) refers to interrupt.o(.constdata) for .constdata
+    interrupt.o(i.IntPriorityGroupingSet) refers to interrupt.o(.constdata) for .constdata
+    interrupt.o(i.IntPriorityMaskGet) refers to cpu.o(.emb_text) for CPUbasepriGet
+    interrupt.o(i.IntPriorityMaskSet) refers to cpu.o(.emb_text) for CPUbasepriSet
+    interrupt.o(i.IntPrioritySet) refers to interrupt.o(.constdata) for .constdata
+    interrupt.o(i.IntRegister) refers to interrupt.o(vtable) for vtable
+    interrupt.o(i.IntUnregister) refers to interrupt.o(i._IntDefaultHandler) for _IntDefaultHandler
+    interrupt.o(i.IntUnregister) refers to interrupt.o(vtable) for vtable
+    ssi.o(i.SSIIntRegister) refers to interrupt.o(i.IntRegister) for IntRegister
+    ssi.o(i.SSIIntRegister) refers to interrupt.o(i.IntEnable) for IntEnable
+    ssi.o(i.SSIIntRegister) refers to ssi.o(.constdata) for .constdata
+    ssi.o(i.SSIIntUnregister) refers to interrupt.o(i.IntDisable) for IntDisable
+    ssi.o(i.SSIIntUnregister) refers to interrupt.o(i.IntUnregister) for IntUnregister
+    ssi.o(i.SSIIntUnregister) refers to ssi.o(.constdata) for .constdata
+    sysctl.o(i.SysCtlClockFreqSet) refers to sysctl.o(.constdata) for .constdata
+    sysctl.o(i.SysCtlClockGet) refers to sysctl.o(.constdata) for .constdata
+    sysctl.o(i.SysCtlClockSet) refers to sysctl.o(.emb_text) for SysCtlDelay
+    sysctl.o(i.SysCtlDeepSleep) refers to cpu.o(.emb_text) for CPUwfi
+    sysctl.o(i.SysCtlIntRegister) refers to interrupt.o(i.IntRegister) for IntRegister
+    sysctl.o(i.SysCtlIntRegister) refers to interrupt.o(i.IntEnable) for IntEnable
+    sysctl.o(i.SysCtlIntUnregister) refers to interrupt.o(i.IntDisable) for IntDisable
+    sysctl.o(i.SysCtlIntUnregister) refers to interrupt.o(i.IntUnregister) for IntUnregister
+    sysctl.o(i.SysCtlSleep) refers to cpu.o(.emb_text) for CPUwfi
+    uart.o(i.UARTIntRegister) refers to interrupt.o(i.IntRegister) for IntRegister
+    uart.o(i.UARTIntRegister) refers to interrupt.o(i.IntEnable) for IntEnable
+    uart.o(i.UARTIntRegister) refers to uart.o(.constdata) for .constdata
+    uart.o(i.UARTIntUnregister) refers to interrupt.o(i.IntDisable) for IntDisable
+    uart.o(i.UARTIntUnregister) refers to interrupt.o(i.IntUnregister) for IntUnregister
+    uart.o(i.UARTIntUnregister) refers to uart.o(.constdata) for .constdata
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry10a.o(.ARM.Collect$$$$0000000D) for __rt_final_cpp
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry11a.o(.ARM.Collect$$$$0000000F) for __rt_final_exit
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry7b.o(.ARM.Collect$$$$00000008) for _main_clock
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry8b.o(.ARM.Collect$$$$0000000A) for _main_cpp_init
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry9a.o(.ARM.Collect$$$$0000000B) for _main_init
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry5.o(.ARM.Collect$$$$00000004) for _main_scatterload
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry2.o(.ARM.Collect$$$$00000001) for _main_stk
+    entry2.o(.ARM.Collect$$$$00000001) refers to entry2.o(.ARM.Collect$$$$00002712) for __lit__00000000
+    entry2.o(.ARM.Collect$$$$00002712) refers to startup_rvmdk.o(STACK) for __initial_sp
+    entry2.o(__vectab_stack_and_reset_area) refers to startup_rvmdk.o(STACK) for __initial_sp
+    entry2.o(__vectab_stack_and_reset_area) refers to entry.o(.ARM.Collect$$$$00000000) for __main
+    entry5.o(.ARM.Collect$$$$00000004) refers to init.o(.text) for __scatterload
+    entry9a.o(.ARM.Collect$$$$0000000B) refers to mainnokia5110.o(.text.main) for main
+    entry9b.o(.ARM.Collect$$$$0000000C) refers to mainnokia5110.o(.text.main) for main
+    init.o(.text) refers to entry5.o(.ARM.Collect$$$$00000004) for __main_after_scatterload
+
+
+==============================================================================
+
+Removing Unused input sections from the image.
+
+    Removing board.o(.text), (0 bytes).
+    Removing board.o(.ARM.exidx.text.initClk), (8 bytes).
+    Removing board.o(.ARM.exidx.text.stopWDT), (8 bytes).
+    Removing board.o(.ARM.exidx.text.registerInterruptHandler), (8 bytes).
+    Removing board.o(.ARM.exidx.text.CC3100_disable), (8 bytes).
+    Removing board.o(.ARM.exidx.text.CC3100_enable), (8 bytes).
+    Removing board.o(.ARM.exidx.text.CC3100_InterruptEnable), (8 bytes).
+    Removing board.o(.ARM.exidx.text.CC3100_InterruptDisable), (8 bytes).
+    Removing board.o(.text.MaskIntHdlr), (14 bytes).
+    Removing board.o(.ARM.exidx.text.MaskIntHdlr), (8 bytes).
+    Removing board.o(.text.UnMaskIntHdlr), (14 bytes).
+    Removing board.o(.ARM.exidx.text.UnMaskIntHdlr), (8 bytes).
+    Removing board.o(.text.Delay), (32 bytes).
+    Removing board.o(.ARM.exidx.text.Delay), (8 bytes).
+    Removing board.o(.ARM.exidx.text.GPIOB_intHandler), (8 bytes).
+    Removing board.o(.text.UART1_intHandler), (30 bytes).
+    Removing board.o(.ARM.exidx.text.UART1_intHandler), (8 bytes).
+    Removing board.o(.bss.IntIsMasked), (1 bytes).
+    Removing led.o(.text), (0 bytes).
+    Removing led.o(.ARM.exidx.text.LED_Init), (8 bytes).
+    Removing led.o(.ARM.exidx.text.Board_Input), (8 bytes).
+    Removing led.o(.text.LED_RedOn), (14 bytes).
+    Removing led.o(.ARM.exidx.text.LED_RedOn), (8 bytes).
+    Removing led.o(.text.LED_RedOff), (14 bytes).
+    Removing led.o(.ARM.exidx.text.LED_RedOff), (8 bytes).
+    Removing led.o(.ARM.exidx.text.LED_RedToggle), (8 bytes).
+    Removing led.o(.text.LED_BlueToggle), (18 bytes).
+    Removing led.o(.ARM.exidx.text.LED_BlueToggle), (8 bytes).
+    Removing led.o(.text.LED_GreenToggle), (18 bytes).
+    Removing led.o(.ARM.exidx.text.LED_GreenToggle), (8 bytes).
+    Removing led.o(.ARM.exidx.text.LED_GreenOn), (8 bytes).
+    Removing led.o(.ARM.exidx.text.LED_GreenOff), (8 bytes).
+    Removing device.o(.text), (0 bytes).
+    Removing device.o(.text.sl_Task), (4 bytes).
+    Removing device.o(.ARM.exidx.text.sl_Task), (8 bytes).
+    Removing device.o(.ARM.exidx.text.GetStartResponseConvert), (8 bytes).
+    Removing device.o(.ARM.exidx.text.sl_Start), (8 bytes).
+    Removing device.o(.ARM.exidx.text._sl_HandleAsync_InitComplete), (8 bytes).
+    Removing device.o(.ARM.exidx.text._sl_HandleAsync_Stop), (8 bytes).
+    Removing device.o(.ARM.exidx.text.sl_Stop), (8 bytes).
+    Removing device.o(.text.sl_EventMaskSet), (38 bytes).
+    Removing device.o(.ARM.exidx.text.sl_EventMaskSet), (8 bytes).
+    Removing device.o(.text.sl_EventMaskGet), (40 bytes).
+    Removing device.o(.ARM.exidx.text.sl_EventMaskGet), (8 bytes).
+    Removing device.o(.ARM.exidx.text.sl_DevGet), (8 bytes).
+    Removing device.o(.text.sl_DevSet), (70 bytes).
+    Removing device.o(.ARM.exidx.text.sl_DevSet), (8 bytes).
+    Removing device.o(.ARM.exidx.text._SlDrvDeviceEventHandler), (8 bytes).
+    Removing device.o(.rodata._SlEventMaskSetCmdCtrl), (4 bytes).
+    Removing device.o(.rodata._SlEventMaskGetCmdCtrl), (4 bytes).
+    Removing device.o(.rodata._SlDeviceSetCmdCtrl), (4 bytes).
+    Removing driver.o(.text), (0 bytes).
+    Removing driver.o(.ARM.exidx.text._SlDrvDriverCBInit), (8 bytes).
+    Removing driver.o(.text._SlDrvObjInit), (56 bytes).
+    Removing driver.o(.ARM.exidx.text._SlDrvObjInit), (8 bytes).
+    Removing driver.o(.ARM.exidx.text._SlDrvDriverCBDeinit), (8 bytes).
+    Removing driver.o(.text._SlDrvObjDeInit), (26 bytes).
+    Removing driver.o(.ARM.exidx.text._SlDrvObjDeInit), (8 bytes).
+    Removing driver.o(.ARM.exidx.text._SlDrvRxIrqHandler), (8 bytes).
+    Removing driver.o(.ARM.exidx.text._SlDrvMsgReadSpawnCtx), (8 bytes).
+    Removing driver.o(.ARM.exidx.text._SlDrvCmdOp), (8 bytes).
+    Removing driver.o(.ARM.exidx.text._SlDrvMsgWrite), (8 bytes).
+    Removing driver.o(.ARM.exidx.text._SlDrvMsgReadCmdCtx), (8 bytes).
+    Removing driver.o(.ARM.exidx.text._SlDrvCmdSend), (8 bytes).
+    Removing driver.o(.ARM.exidx.text._SlDrvDataReadOp), (8 bytes).
+    Removing driver.o(.ARM.exidx.text._SlDrvWaitForPoolObj), (8 bytes).
+    Removing driver.o(.ARM.exidx.text._SlDrvReleasePoolObj), (8 bytes).
+    Removing driver.o(.ARM.exidx.text._SlDrvDataWriteOp), (8 bytes).
+    Removing driver.o(.ARM.exidx.text._SlDrvMsgRead), (8 bytes).
+    Removing driver.o(.ARM.exidx.text._SlDrvRxHdrRead), (8 bytes).
+    Removing driver.o(.ARM.exidx.text._SlDrvClassifyRxMsg), (8 bytes).
+    Removing driver.o(.ARM.exidx.text._SlFindAndSetActiveObj), (8 bytes).
+    Removing driver.o(.ARM.exidx.text._SlAsyncEventGenericHandler), (8 bytes).
+    Removing driver.o(.text._SlDrvShiftDWord), (18 bytes).
+    Removing driver.o(.ARM.exidx.text._SlDrvShiftDWord), (8 bytes).
+    Removing driver.o(.ARM.exidx.text._SlDrvBasicCmd), (8 bytes).
+    Removing driver.o(.ARM.exidx.text._SlRemoveFromList), (8 bytes).
+    Removing flowcont.o(.text), (0 bytes).
+    Removing flowcont.o(.ARM.exidx.text._SlDrvFlowContInit), (8 bytes).
+    Removing flowcont.o(.ARM.exidx.text._SlDrvFlowContDeinit), (8 bytes).
+    Removing fs.o(.text), (0 bytes).
+    Removing fs.o(.text.sl_Strlen), (30 bytes).
+    Removing fs.o(.ARM.exidx.text.sl_Strlen), (8 bytes).
+    Removing fs.o(.text._GetCreateFsMode), (84 bytes).
+    Removing fs.o(.ARM.exidx.text._GetCreateFsMode), (8 bytes).
+    Removing fs.o(.text.sl_FsOpen), (122 bytes).
+    Removing fs.o(.ARM.exidx.text.sl_FsOpen), (8 bytes).
+    Removing fs.o(.text.sl_FsClose), (138 bytes).
+    Removing fs.o(.ARM.exidx.text.sl_FsClose), (8 bytes).
+    Removing fs.o(.text.sl_FsRead), (144 bytes).
+    Removing fs.o(.ARM.exidx.text.sl_FsRead), (8 bytes).
+    Removing fs.o(.text.sl_FsWrite), (144 bytes).
+    Removing fs.o(.ARM.exidx.text.sl_FsWrite), (8 bytes).
+    Removing fs.o(.text.sl_FsGetInfo), (108 bytes).
+    Removing fs.o(.ARM.exidx.text.sl_FsGetInfo), (8 bytes).
+    Removing fs.o(.text.sl_FsDel), (82 bytes).
+    Removing fs.o(.ARM.exidx.text.sl_FsDel), (8 bytes).
+    Removing fs.o(.rodata._SlFsOpenCmdCtrl), (4 bytes).
+    Removing fs.o(.rodata._SlFsCloseCmdCtrl), (4 bytes).
+    Removing fs.o(.rodata._SlFsReadCmdCtrl), (4 bytes).
+    Removing fs.o(.rodata._SlFsWriteCmdCtrl), (4 bytes).
+    Removing fs.o(.rodata._SlFsGetInfoCmdCtrl), (4 bytes).
+    Removing fs.o(.rodata._SlFsDeleteCmdCtrl), (4 bytes).
+    Removing netapp.o(.text), (0 bytes).
+    Removing netapp.o(.text.sl_NetAppStart), (34 bytes).
+    Removing netapp.o(.ARM.exidx.text.sl_NetAppStart), (8 bytes).
+    Removing netapp.o(.text.sl_NetAppStop), (34 bytes).
+    Removing netapp.o(.ARM.exidx.text.sl_NetAppStop), (8 bytes).
+    Removing netapp.o(.text.sl_NetAppGetServiceList), (120 bytes).
+    Removing netapp.o(.ARM.exidx.text.sl_NetAppGetServiceList), (8 bytes).
+    Removing netapp.o(.ARM.exidx.text.sl_NetAppMDNSRegisterUnregisterService), (8 bytes).
+    Removing netapp.o(.text.sl_NetAppMDNSRegisterService), (30 bytes).
+    Removing netapp.o(.ARM.exidx.text.sl_NetAppMDNSRegisterService), (8 bytes).
+    Removing netapp.o(.ARM.exidx.text.sl_NetAppMDNSUnRegisterService), (8 bytes).
+    Removing netapp.o(.text.sl_NetAppDnsGetHostByService), (212 bytes).
+    Removing netapp.o(.ARM.exidx.text.sl_NetAppDnsGetHostByService), (8 bytes).
+    Removing netapp.o(.ARM.exidx.text._sl_HandleAsync_DnsGetHostByService), (8 bytes).
+    Removing netapp.o(.text._sl_HandleAsync_DnsGetHostByAddr), (2 bytes).
+    Removing netapp.o(.ARM.exidx.text._sl_HandleAsync_DnsGetHostByAddr), (8 bytes).
+    Removing netapp.o(.ARM.exidx.text.sl_NetAppDnsGetHostByName), (8 bytes).
+    Removing netapp.o(.ARM.exidx.text._sl_HandleAsync_DnsGetHostByName), (8 bytes).
+    Removing netapp.o(.text.CopyPingResultsToReport), (28 bytes).
+    Removing netapp.o(.ARM.exidx.text.CopyPingResultsToReport), (8 bytes).
+    Removing netapp.o(.ARM.exidx.text._sl_HandleAsync_PingResponse), (8 bytes).
+    Removing netapp.o(.text.sl_NetAppPingStart), (328 bytes).
+    Removing netapp.o(.ARM.exidx.text.sl_NetAppPingStart), (8 bytes).
+    Removing netapp.o(.text.sl_NetAppSet), (70 bytes).
+    Removing netapp.o(.ARM.exidx.text.sl_NetAppSet), (8 bytes).
+    Removing netapp.o(.ARM.exidx.text.sl_NetAppSendTokenValue), (8 bytes).
+    Removing netapp.o(.text.sl_NetAppGet), (98 bytes).
+    Removing netapp.o(.ARM.exidx.text.sl_NetAppGet), (8 bytes).
+    Removing netapp.o(.ARM.exidx.text._SlDrvNetAppEventHandler), (8 bytes).
+    Removing netapp.o(.rodata._SlNetAppStartCtrl), (4 bytes).
+    Removing netapp.o(.rodata._SlNetAppStopCtrl), (4 bytes).
+    Removing netapp.o(.rodata._SlGetServiceListeCtrl), (4 bytes).
+    Removing netapp.o(.rodata._SlGetHostByServiceCtrl), (4 bytes).
+    Removing netapp.o(.rodata._SlNetAppSetCmdCtrl), (4 bytes).
+    Removing netapp.o(.rodata._SlNetAppGetCmdCtrl), (4 bytes).
+    Removing netapp.o(.rodata..Lswitch.table.sl_NetAppGetServiceList), (6 bytes).
+    Removing netcfg.o(.text), (0 bytes).
+    Removing netcfg.o(.ARM.exidx.text.sl_NetCfgSet), (8 bytes).
+    Removing netcfg.o(.text.sl_NetCfgGet), (128 bytes).
+    Removing netcfg.o(.ARM.exidx.text.sl_NetCfgGet), (8 bytes).
+    Removing netcfg.o(.rodata._SlNetCfgGetCmdCtrl), (4 bytes).
+    Removing nonos.o(.text), (0 bytes).
+    Removing nonos.o(.ARM.exidx.text._SlNonOsSemSet), (8 bytes).
+    Removing nonos.o(.ARM.exidx.text._SlNonOsSemGet), (8 bytes).
+    Removing nonos.o(.ARM.exidx.text._SlNonOsMainLoopTask), (8 bytes).
+    Removing nonos.o(.ARM.exidx.text._SlNonOsSpawn), (8 bytes).
+    Removing socket.o(.text), (0 bytes).
+    Removing socket.o(.text._sl_BuildAddress), (40 bytes).
+    Removing socket.o(.ARM.exidx.text._sl_BuildAddress), (8 bytes).
+    Removing socket.o(.ARM.exidx.text._sl_TruncatePayloadByProtocol), (8 bytes).
+    Removing socket.o(.text._sl_ParseAddress), (62 bytes).
+    Removing socket.o(.ARM.exidx.text._sl_ParseAddress), (8 bytes).
+    Removing socket.o(.ARM.exidx.text.sl_Socket), (8 bytes).
+    Removing socket.o(.ARM.exidx.text.sl_Close), (8 bytes).
+    Removing socket.o(.text.sl_Bind), (152 bytes).
+    Removing socket.o(.ARM.exidx.text.sl_Bind), (8 bytes).
+    Removing socket.o(.text.sl_SendTo), (236 bytes).
+    Removing socket.o(.ARM.exidx.text.sl_SendTo), (8 bytes).
+    Removing socket.o(.text.sl_RecvFrom), (154 bytes).
+    Removing socket.o(.ARM.exidx.text.sl_RecvFrom), (8 bytes).
+    Removing socket.o(.ARM.exidx.text.sl_Connect), (8 bytes).
+    Removing socket.o(.ARM.exidx.text._sl_HandleAsync_Connect), (8 bytes).
+    Removing socket.o(.ARM.exidx.text.sl_Send), (8 bytes).
+    Removing socket.o(.text.sl_Listen), (42 bytes).
+    Removing socket.o(.ARM.exidx.text.sl_Listen), (8 bytes).
+    Removing socket.o(.text.sl_Accept), (288 bytes).
+    Removing socket.o(.ARM.exidx.text.sl_Accept), (8 bytes).
+    Removing socket.o(.ARM.exidx.text.sl_Htonl), (8 bytes).
+    Removing socket.o(.ARM.exidx.text.sl_Htons), (8 bytes).
+    Removing socket.o(.ARM.exidx.text._sl_HandleAsync_Accept), (8 bytes).
+    Removing socket.o(.ARM.exidx.text.sl_Recv), (8 bytes).
+    Removing socket.o(.text.sl_SetSockOpt), (70 bytes).
+    Removing socket.o(.ARM.exidx.text.sl_SetSockOpt), (8 bytes).
+    Removing socket.o(.text.sl_GetSockOpt), (112 bytes).
+    Removing socket.o(.ARM.exidx.text.sl_GetSockOpt), (8 bytes).
+    Removing socket.o(.text.sl_Select), (266 bytes).
+    Removing socket.o(.ARM.exidx.text.sl_Select), (8 bytes).
+    Removing socket.o(.text.SL_FD_SET), (18 bytes).
+    Removing socket.o(.ARM.exidx.text.SL_FD_SET), (8 bytes).
+    Removing socket.o(.text.SL_FD_CLR), (20 bytes).
+    Removing socket.o(.ARM.exidx.text.SL_FD_CLR), (8 bytes).
+    Removing socket.o(.text.SL_FD_ISSET), (16 bytes).
+    Removing socket.o(.ARM.exidx.text.SL_FD_ISSET), (8 bytes).
+    Removing socket.o(.text.SL_FD_ZERO), (6 bytes).
+    Removing socket.o(.ARM.exidx.text.SL_FD_ZERO), (8 bytes).
+    Removing socket.o(.ARM.exidx.text._sl_HandleAsync_Select), (8 bytes).
+    Removing socket.o(.rodata._SlRecvfomCmdCtrl), (4 bytes).
+    Removing socket.o(.rodata._SlListenCmdCtrl), (4 bytes).
+    Removing socket.o(.rodata._SlAcceptCmdCtrl), (4 bytes).
+    Removing socket.o(.rodata._SlSetSockOptCmdCtrl), (4 bytes).
+    Removing socket.o(.rodata._SlGetSockOptCmdCtrl), (4 bytes).
+    Removing socket.o(.rodata._SlSelectCmdCtrl), (4 bytes).
+    Removing spawn.o(.text), (0 bytes).
+    Removing spi.o(.text), (0 bytes).
+    Removing spi.o(.ARM.exidx.text.spi_Close), (8 bytes).
+    Removing spi.o(.ARM.exidx.text.spi_Open), (8 bytes).
+    Removing spi.o(.ARM.exidx.text.spi_Write), (8 bytes).
+    Removing spi.o(.ARM.exidx.text.spi_Read), (8 bytes).
+    Removing startup_rvmdk.o(HEAP), (0 bytes).
+    Removing startup_rvmdk.o(.text), (0 bytes).
+    Removing uart.o(.text), (0 bytes).
+    Removing wlan.o(.text), (0 bytes).
+    Removing wlan.o(.ARM.exidx.text.sl_WlanConnect), (8 bytes).
+    Removing wlan.o(.ARM.exidx.text.sl_WlanDisconnect), (8 bytes).
+    Removing wlan.o(.ARM.exidx.text.sl_WlanPolicySet), (8 bytes).
+    Removing wlan.o(.text.sl_WlanPolicyGet), (118 bytes).
+    Removing wlan.o(.ARM.exidx.text.sl_WlanPolicyGet), (8 bytes).
+    Removing wlan.o(.text.sl_WlanProfileAdd), (402 bytes).
+    Removing wlan.o(.ARM.exidx.text.sl_WlanProfileAdd), (8 bytes).
+    Removing wlan.o(.text.sl_WlanProfileGet), (178 bytes).
+    Removing wlan.o(.ARM.exidx.text.sl_WlanProfileGet), (8 bytes).
+    Removing wlan.o(.ARM.exidx.text.sl_WlanProfileDel), (8 bytes).
+    Removing wlan.o(.text.sl_WlanGetNetworkList), (72 bytes).
+    Removing wlan.o(.ARM.exidx.text.sl_WlanGetNetworkList), (8 bytes).
+    Removing wlan.o(.text.sl_WlanRxFilterAdd), (140 bytes).
+    Removing wlan.o(.ARM.exidx.text.sl_WlanRxFilterAdd), (8 bytes).
+    Removing wlan.o(.text.sl_WlanRxFilterSet), (54 bytes).
+    Removing wlan.o(.ARM.exidx.text.sl_WlanRxFilterSet), (8 bytes).
+    Removing wlan.o(.text.sl_WlanRxFilterGet), (88 bytes).
+    Removing wlan.o(.ARM.exidx.text.sl_WlanRxFilterGet), (8 bytes).
+    Removing wlan.o(.text.sl_WlanRxStatStart), (8 bytes).
+    Removing wlan.o(.ARM.exidx.text.sl_WlanRxStatStart), (8 bytes).
+    Removing wlan.o(.text.sl_WlanRxStatStop), (8 bytes).
+    Removing wlan.o(.ARM.exidx.text.sl_WlanRxStatStop), (8 bytes).
+    Removing wlan.o(.text.sl_WlanRxStatGet), (44 bytes).
+    Removing wlan.o(.ARM.exidx.text.sl_WlanRxStatGet), (8 bytes).
+    Removing wlan.o(.text.sl_WlanSmartConfigStop), (8 bytes).
+    Removing wlan.o(.ARM.exidx.text.sl_WlanSmartConfigStop), (8 bytes).
+    Removing wlan.o(.text.sl_WlanSmartConfigStart), (116 bytes).
+    Removing wlan.o(.ARM.exidx.text.sl_WlanSmartConfigStart), (8 bytes).
+    Removing wlan.o(.ARM.exidx.text.sl_WlanSetMode), (8 bytes).
+    Removing wlan.o(.ARM.exidx.text.sl_WlanSet), (8 bytes).
+    Removing wlan.o(.text.sl_WlanGet), (132 bytes).
+    Removing wlan.o(.ARM.exidx.text.sl_WlanGet), (8 bytes).
+    Removing wlan.o(.rodata._SlPolicyGetCmdCtrl), (4 bytes).
+    Removing wlan.o(.rodata._SlProfileGetCmdCtrl), (4 bytes).
+    Removing wlan.o(.rodata._SlWlanGetNetworkListCtrl), (4 bytes).
+    Removing wlan.o(.rodata._SlRxFilterAddtCmdCtrl), (4 bytes).
+    Removing wlan.o(.rodata._SlRxFilterSetCmdCtrl), (4 bytes).
+    Removing wlan.o(.rodata._SlRxFilterGetCmdCtrl), (4 bytes).
+    Removing wlan.o(.rodata._SlSmartConfigStartCmdCtrl), (4 bytes).
+    Removing wlan.o(.rodata._SlWlanCfgGetCmdCtrl), (4 bytes).
+    Removing uartstdio.o(.text), (0 bytes).
+    Removing uartstdio.o(.ARM.exidx.text.UARTStdioConfig), (8 bytes).
+    Removing uartstdio.o(.text.UARTFlushRx), (50 bytes).
+    Removing uartstdio.o(.ARM.exidx.text.UARTFlushRx), (8 bytes).
+    Removing uartstdio.o(.text.UARTFlushTx), (82 bytes).
+    Removing uartstdio.o(.ARM.exidx.text.UARTFlushTx), (8 bytes).
+    Removing uartstdio.o(.ARM.exidx.text.UARTwrite), (8 bytes).
+    Removing uartstdio.o(.ARM.exidx.text.UARTPrimeTransmit), (8 bytes).
+    Removing uartstdio.o(.text.UARTOutString), (58 bytes).
+    Removing uartstdio.o(.ARM.exidx.text.UARTOutString), (8 bytes).
+    Removing uartstdio.o(.text.UARTgets), (114 bytes).
+    Removing uartstdio.o(.ARM.exidx.text.UARTgets), (8 bytes).
+    Removing uartstdio.o(.text.UARTgetc), (48 bytes).
+    Removing uartstdio.o(.ARM.exidx.text.UARTgetc), (8 bytes).
+    Removing uartstdio.o(.ARM.exidx.text.UARTvprintf), (8 bytes).
+    Removing uartstdio.o(.ARM.exidx.text.UARTprintf), (8 bytes).
+    Removing uartstdio.o(.text.UARTRxBytesAvail), (28 bytes).
+    Removing uartstdio.o(.ARM.exidx.text.UARTRxBytesAvail), (8 bytes).
+    Removing uartstdio.o(.text.UARTTxBytesFree), (30 bytes).
+    Removing uartstdio.o(.ARM.exidx.text.UARTTxBytesFree), (8 bytes).
+    Removing uartstdio.o(.text.UARTPeek), (76 bytes).
+    Removing uartstdio.o(.ARM.exidx.text.UARTPeek), (8 bytes).
+    Removing uartstdio.o(.text.UARTEchoSet), (16 bytes).
+    Removing uartstdio.o(.ARM.exidx.text.UARTEchoSet), (8 bytes).
+    Removing uartstdio.o(.ARM.exidx.text.UARTStdioIntHandler), (8 bytes).
+    Removing ustdlib.o(.text), (0 bytes).
+    Removing ustdlib.o(.text.ustrncpy), (36 bytes).
+    Removing ustdlib.o(.ARM.exidx.text.ustrncpy), (8 bytes).
+    Removing ustdlib.o(.text.uvsnprintf), (1024 bytes).
+    Removing ustdlib.o(.ARM.exidx.text.uvsnprintf), (8 bytes).
+    Removing ustdlib.o(.text.usprintf), (36 bytes).
+    Removing ustdlib.o(.ARM.exidx.text.usprintf), (8 bytes).
+    Removing ustdlib.o(.text.usnprintf), (26 bytes).
+    Removing ustdlib.o(.ARM.exidx.text.usnprintf), (8 bytes).
+    Removing ustdlib.o(.text.ulocaltime), (252 bytes).
+    Removing ustdlib.o(.ARM.exidx.text.ulocaltime), (8 bytes).
+    Removing ustdlib.o(.text.umktime), (106 bytes).
+    Removing ustdlib.o(.ARM.exidx.text.umktime), (8 bytes).
+    Removing ustdlib.o(.text.ucmptime), (80 bytes).
+    Removing ustdlib.o(.ARM.exidx.text.ucmptime), (8 bytes).
+    Removing ustdlib.o(.text.ustrtoul), (174 bytes).
+    Removing ustdlib.o(.ARM.exidx.text.ustrtoul), (8 bytes).
+    Removing ustdlib.o(.text.ustrtof), (440 bytes).
+    Removing ustdlib.o(.ARM.exidx.text.ustrtof), (8 bytes).
+    Removing ustdlib.o(.text.ustrlen), (16 bytes).
+    Removing ustdlib.o(.ARM.exidx.text.ustrlen), (8 bytes).
+    Removing ustdlib.o(.text.ustrstr), (82 bytes).
+    Removing ustdlib.o(.ARM.exidx.text.ustrstr), (8 bytes).
+    Removing ustdlib.o(.text.ustrncmp), (50 bytes).
+    Removing ustdlib.o(.ARM.exidx.text.ustrncmp), (8 bytes).
+    Removing ustdlib.o(.text.ustrncasecmp), (102 bytes).
+    Removing ustdlib.o(.ARM.exidx.text.ustrncasecmp), (8 bytes).
+    Removing ustdlib.o(.text.ustrcasecmp), (8 bytes).
+    Removing ustdlib.o(.ARM.exidx.text.ustrcasecmp), (8 bytes).
+    Removing ustdlib.o(.text.ustrcmp), (46 bytes).
+    Removing ustdlib.o(.ARM.exidx.text.ustrcmp), (8 bytes).
+    Removing ustdlib.o(.text.usrand), (12 bytes).
+    Removing ustdlib.o(.ARM.exidx.text.usrand), (8 bytes).
+    Removing ustdlib.o(.text.urand), (34 bytes).
+    Removing ustdlib.o(.ARM.exidx.text.urand), (8 bytes).
+    Removing ustdlib.o(.rodata.str1.1), (6 bytes).
+    Removing ustdlib.o(.rodata.g_psDaysToMonth), (48 bytes).
+    Removing ustdlib.o(.data.g_iRandomSeed), (4 bytes).
+    Removing mainnokia5110.o(.text), (0 bytes).
+    Removing mainnokia5110.o(.text.LCD_OutString), (4 bytes).
+    Removing mainnokia5110.o(.ARM.exidx.text.LCD_OutString), (8 bytes).
+    Removing mainnokia5110.o(.ARM.exidx.text.LCD_Init), (8 bytes).
+    Removing mainnokia5110.o(.ARM.exidx.text.UARToutString), (8 bytes).
+    Removing mainnokia5110.o(.text.UART0_OutChar), (22 bytes).
+    Removing mainnokia5110.o(.ARM.exidx.text.UART0_OutChar), (8 bytes).
+    Removing mainnokia5110.o(.text.UART0_In), (20 bytes).
+    Removing mainnokia5110.o(.ARM.exidx.text.UART0_In), (8 bytes).
+    Removing mainnokia5110.o(.ARM.exidx.text.UART0_InString), (8 bytes).
+    Removing mainnokia5110.o(.ARM.exidx.text.SimpleLinkWlanEventHandler), (8 bytes).
+    Removing mainnokia5110.o(.ARM.exidx.text.SimpleLinkNetAppEventHandler), (8 bytes).
+    Removing mainnokia5110.o(.ARM.exidx.text.SimpleLinkHttpServerCallback), (8 bytes).
+    Removing mainnokia5110.o(.text.SimpleLinkGeneralEventHandler), (2 bytes).
+    Removing mainnokia5110.o(.ARM.exidx.text.SimpleLinkGeneralEventHandler), (8 bytes).
+    Removing mainnokia5110.o(.text.SimpleLinkSockEventHandler), (2 bytes).
+    Removing mainnokia5110.o(.ARM.exidx.text.SimpleLinkSockEventHandler), (8 bytes).
+    Removing mainnokia5110.o(.text.Crash), (6 bytes).
+    Removing mainnokia5110.o(.ARM.exidx.text.Crash), (8 bytes).
+    Removing mainnokia5110.o(.ARM.exidx.text.main), (8 bytes).
+    Removing mainnokia5110.o(.ARM.exidx.text.WlanConnect), (8 bytes).
+    Removing mainnokia5110.o(.text.Systick_Wait), (32 bytes).
+    Removing mainnokia5110.o(.ARM.exidx.text.Systick_Wait), (8 bytes).
+    Removing mainnokia5110.o(.ARM.use_no_argv), (4 bytes).
+    Removing st7735.o(.text), (0 bytes).
+    Removing st7735.o(.text.Delay1ms), (32 bytes).
+    Removing st7735.o(.ARM.exidx.text.Delay1ms), (8 bytes).
+    Removing st7735.o(.text.ST7735_InitB), (114 bytes).
+    Removing st7735.o(.ARM.exidx.text.ST7735_InitB), (8 bytes).
+    Removing st7735.o(.ARM.exidx.text.commonInit), (8 bytes).
+    Removing st7735.o(.text.ST7735_SetCursor), (32 bytes).
+    Removing st7735.o(.ARM.exidx.text.ST7735_SetCursor), (8 bytes).
+    Removing st7735.o(.ARM.exidx.text.ST7735_FillScreen), (8 bytes).
+    Removing st7735.o(.ARM.exidx.text.ST7735_InitR), (8 bytes).
+    Removing st7735.o(.ARM.exidx.text.commandList), (8 bytes).
+    Removing st7735.o(.ARM.exidx.text.ST7735_DrawPixel), (8 bytes).
+    Removing st7735.o(.ARM.exidx.text.setAddrWindow), (8 bytes).
+    Removing st7735.o(.text.ST7735_DrawCircle), (286 bytes).
+    Removing st7735.o(.ARM.exidx.text.ST7735_DrawCircle), (8 bytes).
+    Removing st7735.o(.ARM.exidx.text.ST7735_FillCircle), (8 bytes).
+    Removing st7735.o(.ARM.exidx.text.ST7735_DrawFastVLine), (8 bytes).
+    Removing st7735.o(.text.ST7735_DrawLine), (164 bytes).
+    Removing st7735.o(.ARM.exidx.text.ST7735_DrawLine), (8 bytes).
+    Removing st7735.o(.text.ST7735_DrawFastHLine), (134 bytes).
+    Removing st7735.o(.ARM.exidx.text.ST7735_DrawFastHLine), (8 bytes).
+    Removing st7735.o(.ARM.exidx.text.ST7735_FillRect), (8 bytes).
+    Removing st7735.o(.text.ST7735_Color565), (20 bytes).
+    Removing st7735.o(.ARM.exidx.text.ST7735_Color565), (8 bytes).
+    Removing st7735.o(.text.ST7735_SwapColor), (16 bytes).
+    Removing st7735.o(.ARM.exidx.text.ST7735_SwapColor), (8 bytes).
+    Removing st7735.o(.text.ST7735_DrawBitmap), (304 bytes).
+    Removing st7735.o(.ARM.exidx.text.ST7735_DrawBitmap), (8 bytes).
+    Removing st7735.o(.ARM.exidx.text.ST7735_DrawCharS), (8 bytes).
+    Removing st7735.o(.text.ST7735_DrawChar), (328 bytes).
+    Removing st7735.o(.ARM.exidx.text.ST7735_DrawChar), (8 bytes).
+    Removing st7735.o(.ARM.exidx.text.ST7735_DrawString), (8 bytes).
+    Removing st7735.o(.text.fillmessage), (70 bytes).
+    Removing st7735.o(.ARM.exidx.text.fillmessage), (8 bytes).
+    Removing st7735.o(.text.ST7735_OutUDec), (122 bytes).
+    Removing st7735.o(.ARM.exidx.text.ST7735_OutUDec), (8 bytes).
+    Removing st7735.o(.text.ST7735_SetRotation), (242 bytes).
+    Removing st7735.o(.ARM.exidx.text.ST7735_SetRotation), (8 bytes).
+    Removing st7735.o(.text.ST7735_InvertDisplay), (68 bytes).
+    Removing st7735.o(.ARM.exidx.text.ST7735_InvertDisplay), (8 bytes).
+    Removing st7735.o(.text.ST7735_PlotClear), (88 bytes).
+    Removing st7735.o(.ARM.exidx.text.ST7735_PlotClear), (8 bytes).
+    Removing st7735.o(.text.ST7735_PlotPoint), (144 bytes).
+    Removing st7735.o(.ARM.exidx.text.ST7735_PlotPoint), (8 bytes).
+    Removing st7735.o(.text.ST7735_PlotLine), (268 bytes).
+    Removing st7735.o(.ARM.exidx.text.ST7735_PlotLine), (8 bytes).
+    Removing st7735.o(.text.ST7735_PlotPoints), (160 bytes).
+    Removing st7735.o(.ARM.exidx.text.ST7735_PlotPoints), (8 bytes).
+    Removing st7735.o(.text.ST7735_PlotBar), (82 bytes).
+    Removing st7735.o(.ARM.exidx.text.ST7735_PlotBar), (8 bytes).
+    Removing st7735.o(.text.ST7735_PlotdBfs), (52 bytes).
+    Removing st7735.o(.ARM.exidx.text.ST7735_PlotdBfs), (8 bytes).
+    Removing st7735.o(.text.ST7735_PlotNext), (22 bytes).
+    Removing st7735.o(.ARM.exidx.text.ST7735_PlotNext), (8 bytes).
+    Removing st7735.o(.text.ST7735_PlotNextErase), (48 bytes).
+    Removing st7735.o(.ARM.exidx.text.ST7735_PlotNextErase), (8 bytes).
+    Removing st7735.o(.ARM.exidx.text.ST7735_OutChar), (8 bytes).
+    Removing st7735.o(.ARM.exidx.text.ST7735_OutString), (8 bytes).
+    Removing st7735.o(.text.ST7735_SetTextColor), (12 bytes).
+    Removing st7735.o(.ARM.exidx.text.ST7735_SetTextColor), (8 bytes).
+    Removing st7735.o(.text.fputc), (12 bytes).
+    Removing st7735.o(.ARM.exidx.text.fputc), (8 bytes).
+    Removing st7735.o(.text.fgetc), (4 bytes).
+    Removing st7735.o(.ARM.exidx.text.fgetc), (8 bytes).
+    Removing st7735.o(.text.ferror), (6 bytes).
+    Removing st7735.o(.ARM.exidx.text.ferror), (8 bytes).
+    Removing st7735.o(.text.Output_Init), (70 bytes).
+    Removing st7735.o(.ARM.exidx.text.Output_Init), (8 bytes).
+    Removing st7735.o(.text.Output_Clear), (64 bytes).
+    Removing st7735.o(.ARM.exidx.text.Output_Clear), (8 bytes).
+    Removing st7735.o(.text.Output_Off), (64 bytes).
+    Removing st7735.o(.ARM.exidx.text.Output_Off), (8 bytes).
+    Removing st7735.o(.text.Output_On), (4 bytes).
+    Removing st7735.o(.ARM.exidx.text.Output_On), (8 bytes).
+    Removing st7735.o(.text.Output_Color), (12 bytes).
+    Removing st7735.o(.ARM.exidx.text.Output_Color), (8 bytes).
+    Removing st7735.o(.rodata.Bcmd), (103 bytes).
+    Removing st7735.o(.bss.Message), (12 bytes).
+    Removing st7735.o(.bss.Messageindex), (4 bytes).
+    Removing st7735.o(.bss.Ymax), (4 bytes).
+    Removing st7735.o(.bss.Ymin), (4 bytes).
+    Removing st7735.o(.bss.Yrange), (4 bytes).
+    Removing st7735.o(.bss.X), (4 bytes).
+    Removing st7735.o(.bss.lastj), (4 bytes).
+    Removing st7735.o(.rodata.dBfs), (512 bytes).
+    Removing fpu.o(i.FPUDisable), (16 bytes).
+    Removing fpu.o(i.FPUFlushToZeroModeSet), (20 bytes).
+    Removing fpu.o(i.FPUHalfPrecisionModeSet), (20 bytes).
+    Removing fpu.o(i.FPUNaNModeSet), (20 bytes).
+    Removing fpu.o(i.FPURoundingModeSet), (20 bytes).
+    Removing fpu.o(i.FPUStackingDisable), (16 bytes).
+    Removing fpu.o(i.FPUStackingEnable), (20 bytes).
+    Removing gpio.o(i.GPIOADCTriggerDisable), (14 bytes).
+    Removing gpio.o(i.GPIOADCTriggerEnable), (14 bytes).
+    Removing gpio.o(i.GPIODMATriggerDisable), (14 bytes).
+    Removing gpio.o(i.GPIODMATriggerEnable), (14 bytes).
+    Removing gpio.o(i.GPIODirModeGet), (34 bytes).
+    Removing gpio.o(i.GPIOIntRegister), (88 bytes).
+    Removing gpio.o(i.GPIOIntTypeGet), (68 bytes).
+    Removing gpio.o(i.GPIOIntUnregister), (88 bytes).
+    Removing gpio.o(i.GPIOPadConfigGet), (204 bytes).
+    Removing gpio.o(i.GPIOPinRead), (6 bytes).
+    Removing gpio.o(i.GPIOPinTypeADC), (28 bytes).
+    Removing gpio.o(i.GPIOPinTypeCAN), (28 bytes).
+    Removing gpio.o(i.GPIOPinTypeCIR), (28 bytes).
+    Removing gpio.o(i.GPIOPinTypeComparator), (28 bytes).
+    Removing gpio.o(i.GPIOPinTypeEPI), (28 bytes).
+    Removing gpio.o(i.GPIOPinTypeEthernetLED), (28 bytes).
+    Removing gpio.o(i.GPIOPinTypeEthernetMII), (28 bytes).
+    Removing gpio.o(i.GPIOPinTypeGPIOOutputOD), (28 bytes).
+    Removing gpio.o(i.GPIOPinTypeI2C), (28 bytes).
+    Removing gpio.o(i.GPIOPinTypeI2CSCL), (28 bytes).
+    Removing gpio.o(i.GPIOPinTypeKBColumn), (28 bytes).
+    Removing gpio.o(i.GPIOPinTypeKBRow), (28 bytes).
+    Removing gpio.o(i.GPIOPinTypeLCD), (28 bytes).
+    Removing gpio.o(i.GPIOPinTypeLEDSeq), (28 bytes).
+    Removing gpio.o(i.GPIOPinTypeLPC), (28 bytes).
+    Removing gpio.o(i.GPIOPinTypePECIRx), (28 bytes).
+    Removing gpio.o(i.GPIOPinTypePECITx), (28 bytes).
+    Removing gpio.o(i.GPIOPinTypePWM), (28 bytes).
+    Removing gpio.o(i.GPIOPinTypeQEI), (28 bytes).
+    Removing gpio.o(i.GPIOPinTypeTimer), (28 bytes).
+    Removing gpio.o(i.GPIOPinTypeUSBAnalog), (28 bytes).
+    Removing gpio.o(i.GPIOPinTypeUSBDigital), (28 bytes).
+    Removing gpio.o(i.GPIOPinTypeWakeHigh), (30 bytes).
+    Removing gpio.o(i.GPIOPinTypeWakeLow), (30 bytes).
+    Removing gpio.o(i.GPIOPinWakeStatus), (6 bytes).
+    Removing interrupt.o(i.IntDisable), (100 bytes).
+    Removing interrupt.o(i.IntIsEnabled), (96 bytes).
+    Removing interrupt.o(i.IntMasterDisable), (14 bytes).
+    Removing interrupt.o(i.IntPendClear), (68 bytes).
+    Removing interrupt.o(i.IntPendSet), (84 bytes).
+    Removing interrupt.o(i.IntPriorityGet), (28 bytes).
+    Removing interrupt.o(i.IntPriorityGroupingGet), (36 bytes).
+    Removing interrupt.o(i.IntPriorityGroupingSet), (28 bytes).
+    Removing interrupt.o(i.IntPriorityMaskGet), (4 bytes).
+    Removing interrupt.o(i.IntPriorityMaskSet), (4 bytes).
+    Removing interrupt.o(i.IntPrioritySet), (40 bytes).
+    Removing interrupt.o(i.IntRegister), (52 bytes).
+    Removing interrupt.o(i.IntTrigger), (12 bytes).
+    Removing interrupt.o(i.IntUnregister), (20 bytes).
+    Removing interrupt.o(i._IntDefaultHandler), (2 bytes).
+    Removing interrupt.o(vtable), (620 bytes).
+    Removing ssi.o(i.SSIAdvDataPutFrameEnd), (20 bytes).
+    Removing ssi.o(i.SSIAdvDataPutFrameEndNonBlocking), (26 bytes).
+    Removing ssi.o(i.SSIAdvFrameHoldDisable), (10 bytes).
+    Removing ssi.o(i.SSIAdvFrameHoldEnable), (10 bytes).
+    Removing ssi.o(i.SSIAdvModeSet), (12 bytes).
+    Removing ssi.o(i.SSIBusy), (8 bytes).
+    Removing ssi.o(i.SSIClockSourceGet), (6 bytes).
+    Removing ssi.o(i.SSIClockSourceSet), (6 bytes).
+    Removing ssi.o(i.SSIDMADisable), (10 bytes).
+    Removing ssi.o(i.SSIDMAEnable), (8 bytes).
+    Removing ssi.o(i.SSIDataGet), (14 bytes).
+    Removing ssi.o(i.SSIDataPut), (12 bytes).
+    Removing ssi.o(i.SSIDisable), (10 bytes).
+    Removing ssi.o(i.SSIIntClear), (4 bytes).
+    Removing ssi.o(i.SSIIntDisable), (10 bytes).
+    Removing ssi.o(i.SSIIntEnable), (8 bytes).
+    Removing ssi.o(i.SSIIntRegister), (88 bytes).
+    Removing ssi.o(i.SSIIntStatus), (10 bytes).
+    Removing ssi.o(i.SSIIntUnregister), (88 bytes).
+    Removing ssi.o(.constdata), (64 bytes).
+    Removing sysctl.o(i.SysCtlAltClkConfig), (12 bytes).
+    Removing sysctl.o(i.SysCtlClockFreqSet), (712 bytes).
+    Removing sysctl.o(i.SysCtlClockOutConfig), (16 bytes).
+    Removing sysctl.o(i.SysCtlDeepSleep), (32 bytes).
+    Removing sysctl.o(i.SysCtlDeepSleepClockConfigSet), (112 bytes).
+    Removing sysctl.o(i.SysCtlDeepSleepClockSet), (12 bytes).
+    Removing sysctl.o(i.SysCtlDeepSleepPowerSet), (12 bytes).
+    Removing sysctl.o(i.SysCtlFlashSectorSizeGet), (56 bytes).
+    Removing sysctl.o(i.SysCtlFlashSizeGet), (56 bytes).
+    Removing sysctl.o(i.SysCtlGPIOAHBDisable), (28 bytes).
+    Removing sysctl.o(i.SysCtlGPIOAHBEnable), (24 bytes).
+    Removing sysctl.o(i.SysCtlIntClear), (12 bytes).
+    Removing sysctl.o(i.SysCtlIntDisable), (16 bytes).
+    Removing sysctl.o(i.SysCtlIntEnable), (16 bytes).
+    Removing sysctl.o(i.SysCtlIntRegister), (20 bytes).
+    Removing sysctl.o(i.SysCtlIntStatus), (16 bytes).
+    Removing sysctl.o(i.SysCtlIntUnregister), (18 bytes).
+    Removing sysctl.o(i.SysCtlLDODeepSleepGet), (12 bytes).
+    Removing sysctl.o(i.SysCtlLDODeepSleepSet), (12 bytes).
+    Removing sysctl.o(i.SysCtlLDOSleepGet), (12 bytes).
+    Removing sysctl.o(i.SysCtlLDOSleepSet), (12 bytes).
+    Removing sysctl.o(i.SysCtlMOSCConfigSet), (12 bytes).
+    Removing sysctl.o(i.SysCtlNMIClear), (16 bytes).
+    Removing sysctl.o(i.SysCtlNMIStatus), (12 bytes).
+    Removing sysctl.o(i.SysCtlPIOSCCalibrate), (76 bytes).
+    Removing sysctl.o(i.SysCtlPWMClockGet), (24 bytes).
+    Removing sysctl.o(i.SysCtlPWMClockSet), (20 bytes).
+    Removing sysctl.o(i.SysCtlPeripheralClockGating), (68 bytes).
+    Removing sysctl.o(i.SysCtlPeripheralDeepSleepDisable), (40 bytes).
+    Removing sysctl.o(i.SysCtlPeripheralDeepSleepEnable), (40 bytes).
+    Removing sysctl.o(i.SysCtlPeripheralDisable), (40 bytes).
+    Removing sysctl.o(i.SysCtlPeripheralPowerOff), (40 bytes).
+    Removing sysctl.o(i.SysCtlPeripheralPowerOn), (40 bytes).
+    Removing sysctl.o(i.SysCtlPeripheralPresent), (44 bytes).
+    Removing sysctl.o(i.SysCtlPeripheralReady), (44 bytes).
+    Removing sysctl.o(i.SysCtlPeripheralReset), (60 bytes).
+    Removing sysctl.o(i.SysCtlPeripheralSleepDisable), (40 bytes).
+    Removing sysctl.o(i.SysCtlPeripheralSleepEnable), (40 bytes).
+    Removing sysctl.o(i.SysCtlReset), (16 bytes).
+    Removing sysctl.o(i.SysCtlResetBehaviorGet), (12 bytes).
+    Removing sysctl.o(i.SysCtlResetBehaviorSet), (12 bytes).
+    Removing sysctl.o(i.SysCtlResetCauseClear), (16 bytes).
+    Removing sysctl.o(i.SysCtlResetCauseGet), (12 bytes).
+    Removing sysctl.o(i.SysCtlSRAMSizeGet), (16 bytes).
+    Removing sysctl.o(i.SysCtlSleep), (4 bytes).
+    Removing sysctl.o(i.SysCtlSleepPowerSet), (12 bytes).
+    Removing sysctl.o(i.SysCtlUSBPLLDisable), (16 bytes).
+    Removing sysctl.o(i.SysCtlUSBPLLEnable), (16 bytes).
+    Removing sysctl.o(i.SysCtlVoltageEventClear), (16 bytes).
+    Removing sysctl.o(i.SysCtlVoltageEventConfig), (12 bytes).
+    Removing sysctl.o(i.SysCtlVoltageEventStatus), (12 bytes).
+    Removing uart.o(i.UART9BitAddrSend), (38 bytes).
+    Removing uart.o(i.UART9BitAddrSet), (10 bytes).
+    Removing uart.o(i.UART9BitDisable), (14 bytes).
+    Removing uart.o(i.UART9BitEnable), (14 bytes).
+    Removing uart.o(i.UARTBreakCtl), (18 bytes).
+    Removing uart.o(i.UARTBusy), (8 bytes).
+    Removing uart.o(i.UARTCharGet), (12 bytes).
+    Removing uart.o(i.UARTCharGetNonBlocking), (16 bytes).
+    Removing uart.o(i.UARTCharPut), (12 bytes).
+    Removing uart.o(i.UARTCharPutNonBlocking), (16 bytes).
+    Removing uart.o(i.UARTCharsAvail), (10 bytes).
+    Removing uart.o(i.UARTClockSourceGet), (6 bytes).
+    Removing uart.o(i.UARTClockSourceSet), (6 bytes).
+    Removing uart.o(i.UARTConfigGetExpClk), (46 bytes).
+    Removing uart.o(i.UARTConfigSetExpClk), (110 bytes).
+    Removing uart.o(i.UARTDMADisable), (10 bytes).
+    Removing uart.o(i.UARTDMAEnable), (8 bytes).
+    Removing uart.o(i.UARTDisable), (30 bytes).
+    Removing uart.o(i.UARTDisableSIR), (10 bytes).
+    Removing uart.o(i.UARTEnable), (20 bytes).
+    Removing uart.o(i.UARTEnableSIR), (18 bytes).
+    Removing uart.o(i.UARTFIFODisable), (10 bytes).
+    Removing uart.o(i.UARTFIFOEnable), (10 bytes).
+    Removing uart.o(i.UARTFIFOLevelGet), (16 bytes).
+    Removing uart.o(i.UARTFIFOLevelSet), (6 bytes).
+    Removing uart.o(i.UARTFlowControlGet), (8 bytes).
+    Removing uart.o(i.UARTFlowControlSet), (12 bytes).
+    Removing uart.o(i.UARTIntClear), (4 bytes).
+    Removing uart.o(i.UARTIntDisable), (10 bytes).
+    Removing uart.o(i.UARTIntEnable), (8 bytes).
+    Removing uart.o(i.UARTIntRegister), (88 bytes).
+    Removing uart.o(i.UARTIntStatus), (10 bytes).
+    Removing uart.o(i.UARTIntUnregister), (88 bytes).
+    Removing uart.o(i.UARTModemControlClear), (14 bytes).
+    Removing uart.o(i.UARTModemControlGet), (8 bytes).
+    Removing uart.o(i.UARTModemControlSet), (12 bytes).
+    Removing uart.o(i.UARTModemStatusGet), (10 bytes).
+    Removing uart.o(i.UARTParityModeGet), (8 bytes).
+    Removing uart.o(i.UARTParityModeSet), (12 bytes).
+    Removing uart.o(i.UARTRxErrorClear), (6 bytes).
+    Removing uart.o(i.UARTRxErrorGet), (8 bytes).
+    Removing uart.o(i.UARTSmartCardDisable), (10 bytes).
+    Removing uart.o(i.UARTSmartCardEnable), (22 bytes).
+    Removing uart.o(i.UARTSpaceAvail), (10 bytes).
+    Removing uart.o(i.UARTTxIntModeGet), (8 bytes).
+    Removing uart.o(i.UARTTxIntModeSet), (12 bytes).
+    Removing uart.o(.constdata), (128 bytes).
+
+593 unused section(s) (total 20012 bytes) removed from the image.
